@@ -113,7 +113,10 @@ export default function Contact() {
 					<li
 						className={Index === idx ? 'on' : ''}
 						key={idx}
-						onClick={() => setIndex(idx)}
+						onClick={() => {
+							setIndex(idx);
+							setIsMap(true);
+						}}
 					>
 						{el.title}
 					</li>
