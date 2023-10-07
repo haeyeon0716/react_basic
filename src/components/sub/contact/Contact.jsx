@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 
 export default function Contact() {
 	const map = useRef(null);
+	const instance = useRef(null);
 
 	const { kakao } = window;
 	//첫번째 지도를 출력하기 위한 객체정보
@@ -22,16 +23,30 @@ export default function Contact() {
 
 	useEffect(() => {
 		//객체 정보를 활용한 지도 객체 생성
-		const instance = new kakao.maps.Map(map.current, {
+		instance.current = new kakao.maps.Map(map.current, {
 			center: info.latlng,
 			level: 1,
 		});
 		//마커 객체에 지도 객체 연결
-		marker.setMap(instance);
+		marker.setMap(instance.current);
 	}, []);
 
 	return (
 		<Layout title={'Contact'}>
+			<button
+				onClick={() =>
+					instance.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+				}
+			>
+				주변 교통정보 보기
+			</button>
+			<button
+				onClick={() =>
+					instance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+				}
+			>
+				주변 교통정보 끄기
+			</button>
 			<div className='map' ref={map}></div>
 		</Layout>
 	);
