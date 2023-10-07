@@ -1,10 +1,11 @@
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 export default function Contact() {
 	const map = useRef(null);
 	const instance = useRef(null);
+	const [Traffic, setTraffic] = useState(false);
 
 	const { kakao } = window;
 	//첫번째 지도를 출력하기 위한 객체정보
@@ -31,21 +32,19 @@ export default function Contact() {
 		marker.setMap(instance.current);
 	}, []);
 
+	useEffect(() => {
+		//traffic 값이 바뀔때마다 실행될 구문
+		Traffic
+			? instance.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
+			: instance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
+	}, [Traffic]);
+
 	return (
 		<Layout title={'Contact'}>
-			<button
-				onClick={() =>
-					instance.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
-				}
-			>
-				주변 교통정보 보기
-			</button>
-			<button
-				onClick={() =>
-					instance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
-				}
-			>
-				주변 교통정보 끄기
+			{/* <button onClick={() => setTraffic(true)}>주변 교통정보 보기</button>
+			<button onClick={() => setTraffic(false)}>주변 교통정보 끄기</button> */}
+			<button onClick={() => setTraffic(!Traffic)}>
+				{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
 			</button>
 			<div className='map' ref={map}></div>
 		</Layout>
