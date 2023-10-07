@@ -74,7 +74,7 @@ export default function Contact() {
 		//로드뷰 관련 코드
 		new kakao.maps.RoadviewClient().getNearestPanoId(
 			info.current[Index].latlng,
-			50,
+			100, //해당 지도의 위치값에서 반경 100미터 안에 제일 가까운 도로 기준으로 로드뷰화면 생성
 			(panoId) => {
 				new kakao.maps.Roadview(view.current).setPanoId(
 					panoId,
