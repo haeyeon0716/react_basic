@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Layout from '../../common/layout/Layout';
 import './Contact.scss';
 import { useRef, useEffect, useState } from 'react';
@@ -59,7 +60,7 @@ export default function Contact() {
 			mapTypeControl,
 			kakao.maps.ControlPosition.BOTTOMLEFT
 		);
-	}, []);
+	}, [Index]); //Index값이 변경될때마다 지도화면이 다시 갱신되어야 하므로 Index값을 의존성 배열에 등록
 
 	useEffect(() => {
 		//traffic 값이 바뀔때마다 실행될 구문
@@ -74,6 +75,14 @@ export default function Contact() {
 				{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
 			</button>
 			<div className='map' ref={map}></div>
+
+			<ul>
+				{info.current.map((el, idx) => (
+					<li key={idx} onClick={() => setIndex(idx)}>
+						{el.title}
+					</li>
+				))}
+			</ul>
 		</Layout>
 	);
 }
