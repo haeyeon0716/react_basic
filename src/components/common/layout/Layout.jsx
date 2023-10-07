@@ -2,7 +2,7 @@ import './Layout.scss';
 
 export default function Layout({ title, children }) {
 	return (
-		<section className={`layout ${title} `}>
+		<section className={`layout ${title}`}>
 			<figure></figure>
 
 			<div className='content'>
