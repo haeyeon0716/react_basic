@@ -150,6 +150,7 @@ export default function Contact() {
 
 					<div className='lower'>
 						<label>Message</label>
+						<br />
 						<textarea name='message' className='msgEl' />
 					</div>
 
