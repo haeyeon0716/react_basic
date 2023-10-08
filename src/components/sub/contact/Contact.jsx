@@ -98,12 +98,14 @@ export default function Contact() {
 	const sendEmail = (e) => {
 		e.preventDefault();
 
+		//sendForm메서드는 각 키값을 문자열로만 인수로 전달되도록 type지정되어 있기 때문에
+		//변수를 `${}`로 감싸서 문자형식으로 전달
 		emailjs
 			.sendForm(
-				'service_uozay9s',
-				'template_z3yz3bc',
+				`${process.env.REACT_APP_SERVICE_ID}`,
+				`${process.env.REACT_APP_TEMPLATE_ID}`,
 				form.current,
-				'23g8RepczesqKPoIX'
+				`${process.env.REACT_APP_PUBLIC_KEY}`
 			)
 			.then(
 				(result) => {
