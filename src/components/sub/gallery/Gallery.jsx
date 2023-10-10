@@ -14,8 +14,7 @@ export default function Gallery() {
 		const method_interest = 'flickr.interestingness.getList';
 		const method_user = 'flickr.people.getPhotos';
 		const method_search = 'flickr.photos.search';
-
-		const num = 50;
+		const num = 500;
 
 		//fetching함수 호출시 타입값이 있는 객체를 인수로 전달하면 해당 타입에 따라 호출 URL이 변경되고
 		//해당URL을 통해 받아지는 데이터로 달라짐
@@ -31,26 +30,22 @@ export default function Gallery() {
 
 		const data = await fetch(url);
 		const json = await data.json();
-		console.log(json.photos.photo);
+
+		if (json.photos.photo.length === 0) {
+			return alert('해당 검색어의 결과값이 없습니다.');
+		}
 		setPics(json.photos.photo);
 	};
 
 	useEffect(() => {
-		//type: 'interest' 인터레스트 방식 갤러리 호출
-		//type: 'user' 사용자 아이디 계정의 갤러리 호출
-		//type: 'search' 검색키워드로 갤러리 호출
 		fetchData({ type: 'user', id: my_id });
-		//fetchData({ type: 'interest' });
-		//fetchData({ type: 'search', tags: 'ocean' });
 	}, []);
 
 	return (
 		<Layout title={'Gallery'}>
 			<form
 				onSubmit={(e) => {
-					//submit이벤트의 기본 서버 전송기능을 막아줌
 					e.preventDefault();
-					//문자열.trim() : 문자열앞뒤로 빈칸을 제거해서 정리
 					if (refInput.current.value.trim() === '') {
 						return alert('검색어를 입력하세요.');
 					}
@@ -91,6 +86,14 @@ export default function Gallery() {
 										<img
 											src={`http://farm${data.farm}.staticflickr.com/${data.server}/buddyicons/${data.owner}.jpg`}
 											alt={data.owner}
+											onError={(e) => {
+												//만약 사용자가 프로필 이미지를 올리지 않았을때 엑박이 뜨므로
+												//onError이벤트를 연결해서 대체이미지 출력
+												e.target.setAttribute(
+													'src',
+													'https://www.flickr.com/images/buddyicon.gif'
+												);
+											}}
 										/>
 										<span
 											onClick={() =>
