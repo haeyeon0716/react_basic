@@ -11,6 +11,11 @@ export default function Gallery() {
 	const my_id = '164021883@N04';
 
 	const fetchData = async (opt) => {
+		//이벤트 버튼 (interest gallery, my gallery 버튼 클릭할때마다)
+		//새롭게 데이터 fetching을 해야되므로 다시 로딩바 보이게 하고
+		//기존 frame은 안보이도록 on 클래스 제거
+		setLoader(true);
+		refFrame.current.classList.remove('on');
 		let url = '';
 		const api_key = '2a1a0aebb34012a99c23e13b49175343';
 		const method_interest = 'flickr.interestingness.getList';
@@ -50,6 +55,7 @@ export default function Gallery() {
 					console.log('모든 이미지 소스 렌더링 완료!');
 					//모든 소스이미지라 렌더링완료되면 Loader값을 false로 바꿔서 로딩이미지 제거
 					setLoader(false);
+					refFrame.current.classList.add('on');
 				}
 			};
 		});
