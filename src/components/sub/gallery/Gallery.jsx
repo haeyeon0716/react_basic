@@ -1,7 +1,6 @@
 import Layout from '../../common/layout/Layout';
 import './Gallery.scss';
 import { useState, useEffect } from 'react';
-//masonry import
 import Masonry from 'react-masonry-component';
 
 export default function Gallery() {
@@ -23,12 +22,11 @@ export default function Gallery() {
 	return (
 		<Layout title={'Gallery'}>
 			<div className='picFrame'>
-				{/* 반복 도는 article요소를 Masonry로 wrapping후 세팅 */}
 				<Masonry
-					elementType={'div'} //Masonry컴포넌트가 변환될 태그명 지정
-					options={{ transitionDuration: '0.5s' }} //박스모션시 transition 시간 설정
-					disableImagesLoaded={false} //true이미지로딩처리 안함
-					updateOnEachImageLoad={false} //true각 이미지의 로딩처리 안함
+					elementType={'div'}
+					options={{ transitionDuration: '0.5s' }}
+					disableImagesLoaded={false}
+					updateOnEachImageLoad={false}
 				>
 					{Pics.map((data, idx) => {
 						return (
