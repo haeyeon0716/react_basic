@@ -1,4 +1,3 @@
-
 //Layout 컴포넌트를 불러옴 ../../ 구문은 부모 디렉터리로 이동하기 위해 사용됨
 import Layout from '../../common/layout/Layout';
 //데이터가 다 받아지고 useState로 state에 해당 담아줌
@@ -63,4 +62,18 @@ export default function Department() {
 
 
 
+컴포넌트 작성순서 
+--1. import로 외부 모듈, 컴포넌트 불러오기
+
+export default function 컴포넌트 이름 (){
+	필요시 hook 호출 (hook안에서 hook 호출 불가, handler함수 안쪽에서 hook호출 불가)
+
+	필요시 handler함수 정의
+
+	useEffect(()=>{
+		handler 함수 호출 (fetch, 이벤트연결)
+	})
+
+	return JSX
+}
 */
