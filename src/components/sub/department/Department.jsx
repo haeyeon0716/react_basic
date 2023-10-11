@@ -22,7 +22,22 @@ export default function Department() {
 
 	return (
 		<Layout title={'Department'}>
+
+		<div className="box1">
+			<h2>Lorem, ipsum dolor.</h2>
+			<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum sint nobis illum iusto quia rem necessitatibus, molestiae possimus voluptatibus! Neque pariatur suscipit ducimus animi, tenetur assumenda temporibus commodi. Maiores, consectetur sunt, veniam aut fugiat reiciendis explicabo aliquam, molestias consequatur earum assumenda! Esse, nam quas? Earum officia quisquam deleniti reprehenderit placeat facere voluptate. Numquam quidem animi sequi omnis ipsa laudantium qui?
+			</span>
+
+		</div>
+		<div className="box2">
+			<h2>Lorem ipsum dolor sit.</h2>
+			<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque culpa distinctio itaque recusandae ea expedita explicabo? Qui, tenetur hic veniam autem nihil odio ad odit quod sapiente facere aliquam? Veritatis sit non excepturi aperiam, iste sunt possimus, debitis consequatur iure modi placeat accusantium! Laboriosam praesentium corporis fuga, beatae nisi obcaecati quaerat, quas quisquam fugiat quo quasi voluptate qui explicabo magnam nihil natus, culpa quia cumque possimus! Recusandae saepe doloremque modi sapiente distinctio voluptates, dicta repellendus aperiam, blanditiis perferendis ducimus id obcaecati magni! Numquam adipisci totam ut officiis est beatae ab nam ullam tenetur, officia tempora magni. Quasi nesciunt fugit neque tenetur cum iure iusto doloremque quod quam qui odit error ratione magnam explicabo veritatis velit perspiciatis, consequatur sed porro. Laborum doloribus ab ducimus! Dolor illum nostrum consequatur aliquid exercitationem possimus magni ratione adipisci nesciunt voluptatum? A tenetur quasi nam repellat facilis fugit incidunt soluta corporis illo libero. Odit, molestiae perferendis officia assumenda nihil sed nesciunt ullam aperiam quidem quis esse rerum deserunt corrupti! Quae velit dolor inventore tempora, praesentium voluptas maxime quos voluptatibus, amet a impedit numquam unde provident beatae, vitae repellendus quaerat! Aut corporis, expedita incidunt unde ea corrupti quisquam hic molestias iusto, earum eligendi! Alias adipisci accusamus repudiandae.</span>
+
+
+		</div>
+
 		<div className="container">
+
 			<div className="infobox"></div>
 
 			<div className='memberBox'>

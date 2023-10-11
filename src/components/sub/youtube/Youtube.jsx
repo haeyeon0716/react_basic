@@ -44,7 +44,7 @@ export default function Youtube() {
 							<p>{desc.length > 180 ? desc.substr(0, 180) + '...' : desc}</p>
 							<span>{date.split('T')[0].split('-').join('.')}</span>
 							</div>
-							
+
 							<div
 								className='pic'
 								onClick={() => {
