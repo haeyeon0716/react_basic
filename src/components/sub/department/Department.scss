@@ -13,11 +13,13 @@
 			justify-content: space-between;
 
 			.infobox{
-				width: 20%;
+				width: 25%;
+				height: 50vh;
+				background: blue;
 				border: 1px solid red;
 			}
 			.memberBox{
-				width: 75%;
+				width: 70%;
 				display: flex;
 				justify-content: space-between;
 				flex-wrap: wrap; //줄바꿈 처리
@@ -41,3 +43,11 @@
 		}
 	}
 }
+
+/* flex로 ui 좌우배치하는 방법
+--1. 좌우배치할 덩어리를 부모태그로 wrapping
+--2. 부모요소에 display : flex;; justify-content 적용
+--3. 이 때 사이 간격을 주고 싶다면 총 너비의 합이 100% 안되게 설정
+--4. 자식요소로 세로로 줄바꿈 되야 된다면 부모요소에 flex-wrap: wrap설정
+*/
+
