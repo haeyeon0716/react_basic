@@ -22,6 +22,9 @@ export default function Department() {
 
 	return (
 		<Layout title={'Department'}>
+		<div className="container">
+			<div className="infobox"></div>
+
 			<div className='memberBox'>
 				{/* return 문 안쪽에 state값 map으로 반복 돌며 JSX를 출력한다 */}
 				{Department.map((member, idx) => {
@@ -36,6 +39,7 @@ export default function Department() {
 					);
 				})}
 			</div>
+		</div>
 		</Layout>
 	);
 }
@@ -63,7 +67,6 @@ export default function Department() {
 -- UseEffect 컴포넌트가 마운트 되어야지만 CSR방식으로 외부데이터 가져올 수 있음
 
 
-
 컴포넌트 작성순서 
 --1. import로 외부 모듈, 컴포넌트 불러오기
 
@@ -87,7 +90,7 @@ fetch ES6에서 기본문법으로 포함된 동기적으로 외부 데이터를
 Promise : 데이터의 상태값을 추적할 수 있는 객체
 promise의 3가지 상태
 -- pending: 요청을 보내고 대답을 받기까지의 상태
--- fulfilled: pending이 끝나고 요청에 대하 응답을 성공적으로 받는 상태
+-- fulfilled: pending이 끝나고 요청에 대한 응답을 성공적으로 받는 상태
 -- rejected: pending이 끝나고 요청에 대한 응답을 받긴 하지만 에러를 반환받은 상태
 
 JSON ( javascript Object Notation ) = 자바스크립트 객체 표현식

@@ -16,6 +16,7 @@ export default function Youtube() {
 		const num = 5;
 		const resultURL = `${baseURL}?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
+		// async await 사용
 		const data = await fetch(resultURL)
 		const json = await data.json()
 	
@@ -77,10 +78,10 @@ export default function Youtube() {
 	- 해결방법 부모의 state변경함수를 자식 컴포넌트로 전달
 	- 자식컴포넌트에서는 전달받은 state변경함수로 간접적으로 부모 state값 변경가능
 
-	Promise .then구문을 좀 더 구조적으로 짜는 방ㅂㅂ (async await) = then 구문 사용할 필요 없음
+	Promise .then구문을 좀 더 구조적으로 짜는 방법 (async await) = then 구문 사용할 필요 없음
 	async await 사용조건
 	-- promise반환 함수를 wrapping 처리
 	-- wrapping 된 함수에 async 적용
-	-- promise 반혼함수 앞쪽에 await적용
-	-- await 적용되어있는 다음 코드가 무조건 동기화 처리
+	-- promise 반환함수 앞쪽에 await적용
+	-- await 적용되어있는 다음 코드가 무조건 동기화 처리 = 순서대로 실행이 됨
 */
