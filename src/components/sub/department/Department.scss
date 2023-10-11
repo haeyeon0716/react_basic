@@ -1,6 +1,15 @@
 .Department {
 	figure {
-		background-color: lightblue;
+		background: #000;
+	}
+	p{
+		margin-bottom: 40px;
+		float: left;
+	}
+	hr{
+		height: 3px;
+		background: #000;
+		margin-bottom: 10%;
 	}
 
 	.historyBox {
@@ -45,7 +54,7 @@
 
 			.pic {
 				width: 100%;
-				height: 30vw;
+				height: 22vw;
 
 				img {
 					width: 100%;
