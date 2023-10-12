@@ -12,6 +12,7 @@ export default function Gallery() {
 	const [IsUser, setIsUser] = useState(true);
 	const [IsModal, setIsModal] = useState(false);
 	const my_id = '164021883@N04';
+	
 
 	//처음 마운트 데이터 호출 함수
 	const fetchData = async (opt) => {
@@ -95,6 +96,23 @@ export default function Gallery() {
 	return (
 		<>
 			<Layout title={'Gallery'}>
+				<div className="Box">
+				<div className="txtBox">
+					<h2>Lorem, ipsum.</h2>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deserunt quasi, enim repellendus consequuntur optio dicta impedit, soluta ex exercitationem blanditiis, est voluptas eius eum temporibus praesentium possimus porro aut.
+				</div>
+				<div className="txtBox">
+					<h2>Lorem, ipsum.</h2>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deserunt quasi, enim repellendus consequuntur optio dicta impedit, soluta ex exercitationem blanditiis, est voluptas eius eum temporibus praesentium possimus porro aut.
+				</div>
+				<div className="txtBox">
+					<h2>Lorem, ipsum.</h2>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deserunt quasi, enim repellendus consequuntur optio dicta impedit, soluta ex exercitationem blanditiis, est voluptas eius eum temporibus praesentium possimus porro aut.
+				</div>
+				</div>
+
+				<div className="imgBox"></div>
+
 				<div className='searchBox'>
 					<form onSubmit={handleSubmit}>
 						<input

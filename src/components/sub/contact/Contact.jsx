@@ -157,31 +157,62 @@ export default function Contact() {
 
 	return (
 		<Layout title={'Contact'}>
-			<div id='mailBox'>
-				<form ref={form} onSubmit={sendEmail}>
-					<div className='upper'>
-						<span>
-							<label>Name</label>
-							<input type='text' name='user_name' className='nameEl' />
-						</span>
+			<div className='upperBox'>
+				<div id='mailBox'>
+					<form ref={form} onSubmit={sendEmail}>
+						<div className='upper'>
+							<span>
+								<label>Name</label>
+								<input type='text' name='user_name' className='nameEl' />
+							</span>
 
-						<span>
-							<label>Email</label>
-							<input type='email' name='user_email' className='emailEl' />
-						</span>
-					</div>
+							<span>
+								<label>Email</label>
+								<input type='email' name='user_email' className='emailEl' />
+							</span>
+						</div>
 
-					<div className='lower'>
-						<label>Message</label>
-						<textarea name='message' className='msgEl' />
-					</div>
+						<div className='lower'>
+							<label>Message</label>
+							<textarea name='message' className='msgEl' />
+						</div>
 
-					<div className='btnSet'>
-						<input type='reset' value='Cancel' />
-						<input type='submit' value='Send' />
-					</div>
-				</form>
+						<div className='btnSet'>
+							<input type='reset' value='Cancel' />
+							<input type='submit' value='Send' />
+						</div>
+					</form>
+				</div>
+
+				<div id='etc'>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit, id
+					nesciunt? Dolores architecto quas voluptate dolorem impedit ab dolore,
+					itaque blanditiis iste esse delectus libero ipsum repudiandae porro
+					nulla fuga.
+					<br />
+					<br />
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quas. Obcaecati eveniet quisquam omnis maiores at, rerum explicabo aperiam distinctio aliquam magnam vero eius deserunt eligendi asperiores natus corporis fugit in sed, ea libero cum tenetur voluptatem quae? Voluptates laudantium odio nobis reprehenderit expedita cumque at aut facere doloremque iusto?
+				</div>
 			</div>
+
+			<div className="txtBox">
+				<div className="box1">
+					<h2>No.1</h2>
+				</div>
+				<div className="box2">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+				</div>
+				<div className="box2">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+				</div>
+				<div className="box2">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+				</div>
+				<div className="box2">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+				</div>
+			</div>
+
 
 			<div id='mapBox'>
 				<div className='btnSet'>
