@@ -4,7 +4,13 @@
             font-size: 3rem;
             padding-bottom: 2rem;
             border-bottom: 2px solid #222;
-        }	  
+        }	
+        
+        .TotalBox{
+            width: 100%;
+            height: 72vh;
+
+        }
 		.box1{
 			width: 33%;
 			height: 40vh;
@@ -25,15 +31,59 @@
           .box3 {
             width: 100%;
             height: 5vh;
-            background: #222;
+            border-bottom: 1px solid #222;
             margin-top: 30px;
             margin-bottom: 30px;
             float: right;
             text-align: center;
-            color: #efefef;
+            color: #222;
+            font-size: 1.5rem;
+            font-family: 'Nanum Myeongjo' ;
             line-height: 5vh; /* 세로 가운데 정렬을 위한 line-height 설정 */
           }
 
+          .mainbox {
+            width: 100%;
+            display: flex;
+            justify-content: center; /* 가로 가운데 정렬 */
+          }
+          
+          .mainbox article {
+            width: 33.3%;
+            height: 35vh;
+            margin: 25px;
+            border: 1px solid #ddd;
+            border-bottom: 2px solid #444;
+          
+            &:last-child {
+              margin-right: 0;
+            }
+          
+            .pic {
+              width: 100%;
+              height: 150px;
+              background: #777;
+            }
+          
+            .txtbox {
+              width: 100%;
+              padding: 10px 20px;
+              text-align: center;
+          
+              h2 {
+                font: bold 18px/1 'arial';
+                color: #555;
+                margin-bottom: 20px;
+              }
+          
+              p {
+                font: 14px/1.3 'arial';
+                color: #777;
+                margin-bottom: 30px;
+              }
+            }
+          }
+        
 
         .container {
             width: 100%;
