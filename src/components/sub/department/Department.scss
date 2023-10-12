@@ -9,6 +9,7 @@
         .TotalBox{
             width: 100%;
             height: 72vh;
+            display: flex;
 
         }
 		.box1{
@@ -24,7 +25,7 @@
 			height: 60vh;
 			border-bottom: 1px solid #222;
 			margin-bottom: 30px;
-            margin-top: 55px;
+      margin-top: 55px;
 			float: right;
 		  }
 
@@ -96,7 +97,6 @@
                 background: #efefef;
                 margin: 10px;
                 padding: 20px;
-                border-radius: 10px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 text-align: center;
             }
@@ -115,7 +115,6 @@
                         width: 100%;
                         height: 200px;
                         overflow: hidden;
-                        border-radius: 10px;
 
                         img {
                             width: 100%;
