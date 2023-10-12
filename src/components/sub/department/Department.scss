@@ -22,16 +22,17 @@
 			float: right;
 		  }
 
-          .box3{
-			width: 100%;
-			height: 7vh;
-			background: #222;
-			margin-bottom: 20px;
-			float: right;
+          .box3 {
+            width: 100%;
+            height: 5vh;
+            background: #222;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            float: right;
             text-align: center;
-            color:#efefef;
-
-		  }
+            color: #efefef;
+            line-height: 5vh; /* 세로 가운데 정렬을 위한 line-height 설정 */
+          }
 
 
         .container {
