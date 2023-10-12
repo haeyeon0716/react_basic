@@ -33,7 +33,8 @@ export default function Department() {
 			<h2>Lorem ipsum dolor sit.</h2>
 			<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque culpa distinctio itaque recusandae ea expedita explicabo? Qui, tenetur hic veniam autem nihil odio ad odit quod sapiente facere aliquam? Veritatis sit non excepturi aperiam, iste sunt possimus, debitis consequatur iure modi placeat accusantium! Laboriosam praesentium corporis fuga, beatae nisi obcaecati quaerat, quas quisquam fugiat quo quasi voluptate qui explicabo magnam nihil natus, culpa quia cumque possimus! Recusandae saepe doloremque modi sapiente distinctio voluptates, dicta repellendus aperiam, blanditiis perferendis ducimus id obcaecati magni! Numquam adipisci totam ut officiis est beatae ab nam ullam tenetur, officia tempora magni. Quasi nesciunt fugit neque tenetur cum iure iusto doloremque quod quam qui odit error ratione magnam explicabo veritatis velit perspiciatis, consequatur sed porro. Laborum doloribus ab ducimus! Dolor illum nostrum consequatur aliquid exercitationem possimus magni ratione adipisci nesciunt voluptatum? A tenetur quasi nam repellat facilis fugit incidunt soluta corporis illo libero. Odit, molestiae perferendis officia assumenda nihil sed nesciunt ullam aperiam quidem quis esse rerum deserunt corrupti! Quae velit dolor inventore tempora, praesentium voluptas maxime quos voluptatibus, amet a impedit numquam unde provident beatae, vitae repellendus quaerat! Aut corporis, expedita incidunt unde ea corrupti quisquam hic molestias iusto, earum eligendi! Alias adipisci accusamus repudiandae.</span>
 		</div>
-		<div className="box3"></div>
+		<div className="box3">Our Team
+		</div>
 
 		<div className="container">
 
@@ -99,7 +100,7 @@ export default function 컴포넌트 이름 (){
 fetch ES6에서 기본문법으로 포함된 동기적으로 외부 데이터를 가져오는 내장 함수
 -- fetch는 promise반환
 -- promisee가 반환돼야 .then구문 호출가능
--- .then구문을 호춣야지만 동기적으로 다음코드 실행가능
+-- .then구문을 호출해야지만 동기적으로 다음코드 실행가능
 
 Promise : 데이터의 상태값을 추적할 수 있는 객체
 promise의 3가지 상태

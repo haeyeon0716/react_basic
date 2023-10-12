@@ -78,6 +78,13 @@ export default function Contact() {
 			mapTypeControl,
 			kakao.maps.ControlPosition.BOTTOMLEFT
 		);
+		
+		//지도 생성시 마커 고정적으로 적용 되기 때문에 브라우저 리사이즈시 마커가 가운데로 고정 되지 않는 문제
+		//마커를 가운데 고정시키는 함수를 제작한 뒤 윈도우객체 직접 resize 이벤트 발생시마다 핸들러 함수 호출하여 마커 위치 보정
+
+		//contact 페이지에만 동작 되어야 하는 핸들러 함수를 최상위 객체인 window에 직접 연결 했기 때문에 
+		//라우터로 다른 페이지 이동하더라고 계속해서 setCenter 호출되는 문제점 발생
+		//해결 방법 : contact컴포넌트가 언마운트시 강제로 윈도우 객체에서 setCenter핸들러 제거
 		window.addEventListener('resize', setCenter);
 
 		//로드뷰 관련 코드
@@ -91,6 +98,10 @@ export default function Contact() {
 				);
 			}
 		);
+
+		return()=>{
+			window.removeEventListener('resize', setCenter);
+		}
 	}, [Index]); //Index값이 변경될때마다 지도화면이 다시 갱신되어야 하므로 Index값을 의존성 배열에 등록
 
 	useEffect(() => {
