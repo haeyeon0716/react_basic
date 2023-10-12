@@ -36,6 +36,7 @@ export default function Youtube() {
 					let date = data.snippet.publishedAt;
 
 					return (
+
 						<article key={idx}>
 							<div className="titbox">
 							<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
