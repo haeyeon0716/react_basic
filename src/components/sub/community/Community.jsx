@@ -3,24 +3,21 @@ import './Community.scss';
 import { useRef, useState, useEffect } from 'react';
 
 export default function Community() {
-	//로컬 데이터의 값을 parsing해서 반환하는 함수
-	const getlocaData = ()=>{
+	//로컬데이터의 값을 parsing해서 반환하는 함수
+	const getLocalData = () => {
 		const data = localStorage.getItem('post');
-		if(data) return JSON.parse(data);
+		if (data) return JSON.parse(data);
 		else return [];
-	}
-
+	};
 	const refInput = useRef(null);
 	const refTextarea = useRef(null);
 	const refEditInput = useRef(null);
 	const refEditTextarea = useRef(null);
-	//해당 컴포넌트가 처음 마운트 시에는 로컬 저장소에 값이 없기 때문에 빈배열 리턴
-	//저장소에 값이 있으면 해당 값 parsing해서 데이터 리턴
-	const [Posts, setPosts] = useState(getlocaData());
+	//해당 컴포넌트가 처음 마운트시에는 로컬저장소에 값이 없기 때문에 빈배열 리턴
+	//저장소에 값이 있으면 해당값을 parsing된 데이터가 있는 배열값을 리턴
+	const [Posts, setPosts] = useState(getLocalData());
 	const [Allowed, setAllowed] = useState(true);
 	console.log(Posts);
-
-
 
 	const resetForm = () => {
 		refInput.current.value = '';
@@ -33,16 +30,21 @@ export default function Community() {
 		}
 		//기존 Posts 배열값을 Deep copy해서 가져온뒤, 그 뒤에 추가로 방금 입력한 객체를 배열에 추가
 		setPosts([
-			{ title: refInput.current.value, content: refTextarea.current.value },
+			{
+				title: refInput.current.value,
+				content: refTextarea.current.value,
+				data: new Date(),
+			},
 			...Posts,
 		]);
 		resetForm();
 	};
 
 	const deletePost = (delIndex) => {
-		if (window.confirm('정말 해당 게시글을 삭제하시겠습니까?'))
-		//기존 Posts배열을 반복 돌면서 인수로 전달된 삭제 순번값과 현재 반복되는 배열의 순번값이 같지 않은 것만 리턴
-		setPosts(Posts.filter((_, idx) => delIndex !== idx));
+		if (window.confirm('정말 해당 게시글을 삭제하겠습니까?')) {
+			//기존 Posts배열을 반복 돌면서 인수로 전달된 삭제 순번값과 현재 반복되는 배열의 순번값이 같지 않은 것만 리턴
+			setPosts(Posts.filter((_, idx) => delIndex !== idx));
+		}
 	};
 
 	//해당 글을 수정모드로 변경시키는 함수
@@ -87,9 +89,9 @@ export default function Community() {
 		);
 	};
 
-	useEffect(()=>{
-		localStorage.setItem('post', JSON.stringify(Posts))
-	},[Posts])
+	useEffect(() => {
+		localStorage.setItem('post', JSON.stringify(Posts));
+	}, [Posts]);
 
 	return (
 		<Layout title={'Community'}>
@@ -111,6 +113,13 @@ export default function Community() {
 
 			<div className='showBox'>
 				{Posts.map((post, idx) => {
+					const string = JSON.stringify(post.data);
+
+					const [year, month, date] = string
+						.split('T')[0]
+						.split('"')[1]
+						.split('-');
+
 					if (post.enableUpdate) {
 						//수정 모드 렌더링
 						return (
@@ -144,11 +153,13 @@ export default function Community() {
 						);
 					} else {
 						//출력 모드 렌더링
+
 						return (
 							<article key={idx}>
 								<div className='txt'>
 									<h2>{post.title}</h2>
 									<p>{post.content}</p>
+									<p>{`${year}-${month}-${date}`}</p>
 								</div>
 
 								<nav className='btnSet'>
@@ -172,11 +183,11 @@ export default function Community() {
 
   localStorage : 모든 브라우저가 가지고 있는 경량의 저장소 (문자열: 5MB)
 
-  로컬 저장소에 데이터 저장
-  localStorage.setItem({kwy: 'value'}); 
-  객체 저장시 객체를 문자화 시켜서 저장
+  로컬저장소에 데이터 저장
+  localStorage.setItem({key: 'value'}); 
+  객체를 문자화시켜서 저장
 
-  로컬저장소에 데이터 가져오기
+  로컬저장소에 데이터 가져옴
   localStorage.getItem(key)
-  문자화 되어있는 객체를 다시 parsing해서 호출
+  문자화되어있는 객체를 다시 parsing해서 호출
 */
