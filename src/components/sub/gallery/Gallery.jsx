@@ -111,8 +111,15 @@ export default function Gallery() {
 				</div>
 				</div>
 
-				<div className="imgBox"></div>
+			<div className="totalBox">
+				<div className="exBox">
+					<h2>Lorem, ipsum dolor.</h2>
+					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste expedita obcaecati minima aspernatur ducimus distinctio aut autem doloremque quidem nobis voluptatum, dolore quisquam, magnam quibusdam perferendis? Voluptatum dicta quo magnam, placeat dolorem culpa voluptatem dolores cum aliquam ea nobis ullam impedit enim quidem totam quibusdam accusantium debitis quas autem. Nostrum assumenda explicabo natus architecto! Neque maiores nesciunt accusamus nemo? Fugiat, voluptatibus rem ab ex vitae reiciendis error qui illo quisquam.</span>
+				</div>
 
+				<div className="imgBox"></div>
+			</div>
+			
 				<div className='searchBox'>
 					<form onSubmit={handleSubmit}>
 						<input

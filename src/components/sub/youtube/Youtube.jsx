@@ -30,6 +30,24 @@ export default function Youtube() {
 	return (
 		<>
 			<Layout title={'Youtube'}>
+
+				<div className="Box">
+					<div className="box">
+						<h2>Lorem, ipsum.</h2>
+						<br />
+						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
+					</div>
+					<div className="box">
+						<h2>Lorem, ipsum.</h2>
+						<br />
+						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
+					</div>
+					<div className="box">
+						<h2>Lorem, ipsum.</h2>
+						<br />
+						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
+					</div>
+				</div>
 				{Youtube.map((data, idx) => {
 					let tit = data.snippet.title;
 					let desc = data.snippet.description;
@@ -37,9 +55,7 @@ export default function Youtube() {
 
 					return (
 						<article key={idx}>
-							<div className="titbox">
-							<h2>{tit.length > 60 ? tit.substr(0, 60) + '...' : tit}</h2>
-							</div>
+							{/* titbox */}
 							<div className="conbox">
 							<p>{desc.length > 180 ? desc.substr(0, 180) + '...' : desc}</p>
 							<span>{date.split('T')[0].split('-').join('.')}</span>

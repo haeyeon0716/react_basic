@@ -61,16 +61,18 @@
           padding-right: 30px;
           }
 
+
           .mainbox {
             width: 100%;
             display: flex;
             justify-content: center; /* 가로 가운데 정렬 */
             margin-top: 150px;
+            border-top:1px solid #777;
 
             article {
               width: 30%;
               height: 35vh;
-              margin: 30px auto;
+              margin: 70px auto;
               border: 1px solid #ddd;
               border-bottom: 2px solid #444;
               transition: 1.1s;
@@ -108,7 +110,7 @@
       .imgBox2 {
         width: 100%;
         height: 50vh;
-        margin-top: 150px;
+        margin-top: 70px;
         background: #777;
         display: flex;
         flex-direction: column;
@@ -142,7 +144,7 @@
         }
       }
 
-    }
+  }
 }
 
 /* flex로 ui 좌우배치하는 방법
