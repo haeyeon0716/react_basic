@@ -23,6 +23,25 @@ export default function Department() {
 	return (
 		<Layout title={'Department'}>
 
+			<div className="imgTxt">
+			<div className="imgBox">
+				<div className="img"></div>
+			</div>
+
+			<div className="txtBox">
+				<div className="txt">
+					<h2>Lorem, ipsum dolor.</h2>
+					<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa illum sunt ratione, explicabo consequuntur at perspiciatis optio veritatis maiores? Corporis illo deleniti quod commodi sapiente corrupti quas dolor ipsum provident voluptate dolorum, rerum eius eligendi veritatis a exercitationem voluptatem porro eveniet dolorem qui perspiciatis! Voluptas, possimus? Ex similique, veniam, itaque illo est quibusdam dignissimos, sit ullam dicta voluptatibus commodi.</span>
+					<br />
+					<br />
+					<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis hic earum eligendi labore illo esse facere dignissimos odio sapiente aut reprehenderit dolore perspiciatis quos natus, quo doloremque tenetur magnam est voluptates exercitationem itaque laboriosam obcaecati! Delectus mollitia velit nemo, in ducimus porro, nisi perferendis quasi ad, rem tempore quas explicabo facilis dolore similique. Ipsa, magnam molestiae voluptas quasi doloremque dicta dolorem quis fugiat consequatur praesentium, voluptatibus facilis voluptates ipsum tenetur non deleniti amet soluta. Reprehenderit quas ad debitis officiis?</span>
+					<br />
+					<br />
+					<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, illo enim optio quis aut quidem error non adipisci fuga. Doloremque dolor atque veniam, accusantium sequi tempora modi ex necessitatibus amet animi libero inventore corporis eligendi odio at quidem. Asperiores officia culpa error soluta quibusdam repellendus omnis. Explicabo cumque hic qui vel illum praesentium perferendis rerum voluptatum ad non, quam nemo molestias. Ipsa atque harum repellat similique perferendis vel quo odio fuga ut magni placeat consequatur hic inventore sit soluta tenetur totam, temporibus, aspernatur est. Commodi fuga itaque praesentium. Repellendus ab, reprehenderit, cum autem voluptates eligendi perspiciatis molestiae illum sit optio pariatur suscipit quo placeat doloribus sapiente nemo praesentium eaque voluptatum architecto velit quae cupiditate minus voluptatem vero. Quia odio fuga veniam dolor unde officia, reprehenderit magnam optio, nulla temporibus labore alias repellat maxime vitae. Non repellat corrupti exercitationem soluta magnam pariatur! Voluptatem doloribus vel repellendus in placeat provident debitis maiores.</span>
+				</div>
+				</div>	
+			</div>		
+
 		<div className="TotalBox">
 		<div className="box1">
 			<h2>Lorem, ipsum dolor.</h2>
@@ -33,6 +52,9 @@ export default function Department() {
 		<div className="box2">
 			<h2>Lorem ipsum dolor sit.</h2>
 			<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque culpa distinctio itaque recusandae ea expedita explicabo? Qui, tenetur hic veniam autem nihil odio ad odit quod sapiente facere aliquam? Veritatis sit non excepturi aperiam, iste sunt possimus, debitis consequatur iure modi placeat accusantium! Laboriosam praesentium corporis fuga, beatae nisi obcaecati quaerat, quas quisquam fugiat quo quasi voluptate qui explicabo magnam nihil natus, culpa quia cumque possimus! Recusandae saepe doloremque modi sapiente distinctio voluptates, dicta repellendus aperiam, blanditiis perferendis ducimus id obcaecati magni! Numquam adipisci totam ut officiis est beatae ab nam ullam tenetur, officia tempora magni. Quasi nesciunt fugit neque tenetur cum iure iusto doloremque quod quam qui odit error ratione magnam explicabo veritatis velit perspiciatis, consequatur sed porro. Laborum doloribus ab ducimus! Dolor illum nostrum consequatur aliquid exercitationem possimus magni ratione adipisci nesciunt voluptatum? A tenetur quasi nam repellat facilis fugit incidunt soluta corporis illo libero. Odit, molestiae perferendis officia assumenda nihil sed nesciunt ullam aperiam quidem quis esse rerum deserunt corrupti! Quae velit dolor inventore tempora, praesentium voluptas maxime quos voluptatibus, amet a impedit numquam unde provident beatae, vitae repellendus quaerat! Aut corporis, expedita incidunt unde ea corrupti quisquam hic molestias iusto, earum eligendi! Alias adipisci accusamus repudiandae.</span>
+			<br />
+			<br />
+			<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo optio, facilis illo modi nihil enim reiciendis numquam ad ut quisquam reprehenderit repellendus sapiente aut similique et? Cum nemo ea sapiente illum voluptas doloribus repellat ullam voluptates laudantium, laboriosam quaerat eum.</span>
 		</div>
 		</div>
 		<div className="mainbox">
@@ -58,29 +80,22 @@ export default function Department() {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, magni.</p>
                     </div>
                 </article>
-				</div>
-		<div className="box3">Our Team
 		</div>
 
-		<div className="container">
-
-			<div className="infobox"></div>
-
-			<div className='memberBox'>
-				{/* return 문 안쪽에 state값 map으로 반복 돌며 JSX를 출력한다 */}
-				{Department.map((member, idx) => {
-					return (
-						<article key={idx}>
-							<div className='pic'>
-								<img src={`${path}/img/${member.pic}`} alt={member.name} />
-							</div>
-							<h2>{member.name}</h2>
-							<p>{member.position}</p>
-						</article>
-					);
-				})}
+		<div className="imgBox2">
+			<div className="txxt">
+			<h2>Lorem ipsum dolor sit.</h2>
+			<br />
+			<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe a aliquid consectetur. Laudantium repellat quam voluptates ducimus. Repellat porro maxime in magnam consectetur ducimus sunt voluptatibus, temporibus explicabo iusto odit et mollitia nesciunt accusamus quos aspernatur delectus optio tempore ex? </span>
+			<br />
+			<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nesciunt dolorum assumenda minima et ab ut fugit incidunt recusandae? Iure inventore nam praesentium? Numquam at provident nostrum quisquam qui animi earum? Veniam fuga a esse. Dolor nulla amet ab soluta?</span>
 			</div>
+			<button>More view</button>
 		</div>
+
+
+
+			
 		</Layout>
 	);
 }
