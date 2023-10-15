@@ -1,23 +1,63 @@
 .Community {
 	.content {
-		.inputBox {
-			width: 100%;
-			border: 1px solid #aaa;
-			padding: 50px;
-			margin-bottom: 50px;
+		width: 100%;
 
-			input[type='text'],
-			textarea {
-				width: 50%;
-				padding: 8px 10px;
-				border: 1px solid #aaa;
-				resize: none;
-				margin-bottom: 10px;
-				background: #f0fdff;
+		h1{
+            font-size: 7rem;
+            padding-bottom: 2rem;
+            padding: 2rem ;
+		}
+
+		.totalBox{
+			width: 80%;
+			display: flex;
+			margin-top: 50px;
+
+			.imgBox {
+				width: 40%;
+				height: 50vh;
+				background: #777;
+				margin-left: 35px;
+			  }
+	
+			.txtBox{
+				width: 35%;
+				height: 50vh;
+				margin-left: 10px;
+				text-align: center;
+				align-items: center;
+				border-top: 1px solid #777;
+
+				h2,span{
+					align-items: center;
+					padding: 40px;
+				}
 			}
+		}
 
-			.btnSet {
-				button {
+		  
+		  section{
+			display: flex;
+			justify-content: space-around;
+			
+			.inputBox {
+				width: 60%;
+				height: 30vh;
+				margin-bottom: 50px;
+				border-top: 1px solid #aaa;
+				padding: 50px;
+			
+				input[type='text'],
+				textarea {
+					width: 80%;
+					padding: 8px 10px;
+					border: 1px solid #aaa;
+					resize: none;
+					margin-bottom: 10px;
+					background: #f0fdff;
+				}
+			
+				.btnSet button {
 					width: 150px;
 					height: 30px;
 					display: inline-block;
@@ -28,11 +68,12 @@
 					cursor: pointer;
 				}
 			}
-		}
+		  
 
 		.showBox {
-			width: 100%;
-			border: 1px solid #aaa;
+			width: 30%;
+			height: 30vh;
+			border-top: 1px solid #aaa;
 			padding: 50px;
 
 			article {
@@ -83,4 +124,6 @@
 			}
 		}
 	}
+			
+}
 }

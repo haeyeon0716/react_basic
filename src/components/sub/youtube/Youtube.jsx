@@ -12,7 +12,7 @@ export default function Youtube() {
 	const fetchYoutube = async () => {
 		const api_key = process.env.REACT_APP_YOUTUBE_API;
 		const baseURL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-		const pid = 'PLHtvRFLN5v-W5bQjvyH8QTdQQhgflJ3nu';
+		const pid = 'PL1BYYyCLf7NdanCUjHVau1ee2D36jh_qM';
 		const num = 5;
 		const resultURL = `${baseURL}?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
@@ -30,22 +30,32 @@ export default function Youtube() {
 	return (
 		<>
 			<Layout title={'Youtube'}>
+				<div className="txt">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet velit fugit tenetur vero consequatur vel neque, dolore ex optio deserunt,
+					<br />
+					voluptatibus, id non labore explicabo error totam! Illo, itaque id, culpa dolore perferendis libero est magnam a ipsa, aut distinctio.
+				</div>
 
 				<div className="Box">
 					<div className="box">
 						<h2>Lorem, ipsum.</h2>
 						<br />
 						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
+						<button>More view</button>
 					</div>
 					<div className="box">
 						<h2>Lorem, ipsum.</h2>
 						<br />
 						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
+						<button>More view</button>
+
 					</div>
 					<div className="box">
 						<h2>Lorem, ipsum.</h2>
 						<br />
 						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
+						<button>More view</button>
+
 					</div>
 				</div>
 				{Youtube.map((data, idx) => {

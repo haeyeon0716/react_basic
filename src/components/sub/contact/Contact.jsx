@@ -157,6 +157,36 @@ export default function Contact() {
 
 	return (
 		<Layout title={'Contact'}>
+
+<div className="txtBox">
+				<div className="box1">
+					<h2>No.1</h2>
+				</div>
+				<div className="box2">
+					<div className="pic"></div>
+					<span>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+					</span>
+				</div>
+				<div className="box2">
+				<div className="pic"></div>
+				<span>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+					</span>
+				</div>
+				<div className="box2">
+				<div className="pic"></div>
+				<span>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+					</span>
+				</div>
+				<div className="box2">
+				<div className="pic"></div>
+					<span>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
+					</span>
+				</div>
+			</div>
 			<div className='upperBox'>
 				<div id='mailBox'>
 					<form ref={form} onSubmit={sendEmail}>
@@ -195,26 +225,9 @@ export default function Contact() {
 				</div>
 			</div>
 
-			<div className="txtBox">
-				<div className="box1">
-					<h2>No.1</h2>
-				</div>
-				<div className="box2">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
-				</div>
-				<div className="box2">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
-				</div>
-				<div className="box2">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
-				</div>
-				<div className="box2">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
-				</div>
-			</div>
-
-
 			<div id='mapBox'>
+
+				<div className="total">
 				<div className='btnSet'>
 					<button onClick={() => setTraffic(!Traffic)}>
 						{Traffic ? '교통정보 끄기' : '교통정보 켜기'}
@@ -226,12 +239,7 @@ export default function Contact() {
 					</button>
 				</div>
 
-				<div className='container'>
-					<div className={`view ${IsMap ? '' : 'on'}`} ref={view}></div>
-					<div className={`map ${IsMap ? 'on' : ''}`} ref={map}></div>
-				</div>
-
-				{/* 데이터기반으로 자동 버튼 생성 및 자동 이벤트 연결 처리 */}
+					{/* 데이터기반으로 자동 버튼 생성 및 자동 이벤트 연결 처리 */}
 				<ul>
 					{info.current.map((el, idx) => (
 						<li
@@ -246,7 +254,16 @@ export default function Contact() {
 						</li>
 					))}
 				</ul>
+				</div>
+
+				<div className="mapBox">
+					<div className='container'>
+						<div className={`view ${IsMap ? '' : 'on'}`} ref={view}></div>
+						<div className={`map ${IsMap ? 'on' : ''}`} ref={map}></div>
+					</div>
+				</div>
 			</div>
+
 		</Layout>
 	);
 }

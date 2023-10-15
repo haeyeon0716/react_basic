@@ -11,7 +11,12 @@
       justify-content: center;
   
       h1 {
-        font-size: 6rem;
+        font-size: 7rem;
+      }
+
+      .txt{
+        text-align: center;
+        padding: 30px;
       }
 
       .Box{
@@ -21,15 +26,39 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin-bottom: 60px;
+        margin-top: 30px;
 
-        .box{
+        .box {
           width: 25%;
           height: 40vh;
           background: #fff;
           text-align: center;
+          display: flex;
+          flex-direction: column; /* 수정: 요소들을 세로로 정렬하기 위해 */
+          justify-content: center;
+          align-items: center; /* 추가: 요소들을 가운데 정렬 */
+        
+          h2 {
+            margin-top: 20px;
+          }
+        
+          span {
+            flex-wrap: wrap;
+          }
+        
+          button {
+            width: 30%;
+            height: 5vh;
+            align-items: center;
+            margin-top: 30px;
+            border: none;
+            background: #777;
+            transition: 1.1s;
 
-          h2{
-            margin-top: 80px;
+            &:hover{
+              transform: scale(0.9);
+            }
           }
         }
       }

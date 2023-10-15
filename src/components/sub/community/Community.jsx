@@ -95,6 +95,7 @@ export default function Community() {
 
 	return (
 		<Layout title={'Community'}>
+		<section>
 			<div className='inputBox'>
 				<input ref={refInput} type='text' placeholder='제목을 입력하세요.' />
 				<br />
@@ -154,6 +155,7 @@ export default function Community() {
 									</button>
 								</nav>
 							</article>
+							
 						);
 					} else {
 						//출력 모드 렌더링
@@ -172,9 +174,23 @@ export default function Community() {
 									<button onClick={() => deletePost(idx)}>Delete</button>
 								</nav>
 							</article>
+							
 						);
+						
 					}
 				})}
+			</div>
+			</section>
+			<div className="totalBox">
+			<div className="imgBox"></div>
+			<div className="txtBox">
+				<h2>Lorem, ipsum.</h2>
+				<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ratione tenetur! Eos quas minima praesentium sunt inventore sint, incidunt error! Harum mollitia incidunt nostrum saepe.
+				<br />
+				<br />
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate enim, provident quia autem accusamus nostrum aut molestias obcaecati! Eum blanditiis ea expedita recusandae maiores minus neque vitae accusantium reprehenderit ad.
+				</span>
+			</div>
 			</div>
 		</Layout>
 	);
