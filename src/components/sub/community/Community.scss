@@ -7,6 +7,7 @@
 		background: #222;
 
 		h1{
+			background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 50%);
 			width: 45%;
             font-size: 7rem;
 			font-family:serif;
@@ -133,7 +134,7 @@
 							color: orange;
 						}
 						&:nth-of-type(2) {
-							color: orangered;
+							color: #666;
 						}
 					}
 				}

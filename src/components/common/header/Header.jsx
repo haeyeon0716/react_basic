@@ -5,7 +5,7 @@ export default function Header({ isMain }) {
 	return (
 		<header className='header'>
 			<h1>
-				<Link to='/'>LOGO</Link>
+				<Link to='/'>Portfolio</Link>
 			</h1>
 
 			<ul>
