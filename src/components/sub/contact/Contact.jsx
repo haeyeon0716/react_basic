@@ -163,30 +163,39 @@ export default function Contact() {
 					<h2>No.1</h2>
 				</div>
 				<div className="box2">
-					<div className="pic"></div>
+					<div className="pic">
+					<img src={process.env.PUBLIC_URL + 'img/background2.jpg'}/>
+					</div>
 					<span>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
 					</span>
 				</div>
 				<div className="box2">
-				<div className="pic"></div>
+				<div className="pic">
+				<img src={process.env.PUBLIC_URL + 'img/background2.jpg'}/>
+				</div>
 				<span>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
 					</span>
 				</div>
 				<div className="box2">
-				<div className="pic"></div>
+				<div className="pic">
+				<img src={process.env.PUBLIC_URL + 'img/background2.jpg'}/>
+				</div>
 				<span>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
 					</span>
 				</div>
 				<div className="box2">
-				<div className="pic"></div>
+				<div className="pic">
+				<img src={process.env.PUBLIC_URL + 'img/background2.jpg'}/>
+				</div>
 					<span>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde reiciendis ut sapiente placeat corrupti tempore ducimus amet, est labore!
 					</span>
 				</div>
 			</div>
+			<hr />
 			<div className='upperBox'>
 				<div id='mailBox'>
 					<form ref={form} onSubmit={sendEmail}>
@@ -225,6 +234,7 @@ export default function Contact() {
 				</div>
 			</div>
 
+			<hr />
 			<div id='mapBox'>
 
 				<div className="total">

@@ -110,18 +110,22 @@ export default function Gallery() {
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus deserunt quasi, enim repellendus consequuntur optio dicta impedit, soluta ex exercitationem blanditiis, est voluptas eius eum temporibus praesentium possimus porro aut.
 				</div>
 				</div>
-
+				<hr />
 			<div className="totalBox">
 				<div className="exBox">
 					<h2>Lorem, ipsum dolor.</h2>
 					<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste expedita obcaecati minima aspernatur ducimus distinctio aut autem doloremque quidem nobis voluptatum, dolore quisquam, magnam quibusdam perferendis? Voluptatum dicta quo magnam, placeat dolorem culpa voluptatem dolores cum aliquam ea nobis ullam impedit enim quidem totam quibusdam accusantium debitis quas autem. Nostrum assumenda explicabo natus architecto! Neque maiores nesciunt accusamus nemo? Fugiat, voluptatibus rem ab ex vitae reiciendis error qui illo quisquam.</span>
 				</div>
 
-				<div className="imgBox"></div>
+				<div className="imgBox">
+				<img src={process.env.PUBLIC_URL + 'img/background2.jpg'}/>
+				</div>
 			</div>
-
+			<hr />
 			<div className="totalBox">
-				<div className="imgBox"></div>
+				<div className="imgBox">
+				<img src={process.env.PUBLIC_URL + 'img/bg4.jpg'}/>
+				</div>
 
 				<div className="exBox">
 					<h2>Lorem, ipsum dolor.</h2>

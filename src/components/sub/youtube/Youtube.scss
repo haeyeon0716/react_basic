@@ -1,4 +1,6 @@
 .Youtube {
+  background: #222;
+  overflow: hidden;
     figure {
 
     }
@@ -11,33 +13,48 @@
       justify-content: center;
   
       h1 {
+        text-align: center;
+        width: 45%;
         font-size: 7rem;
+        font-family:serif;
+        padding-bottom: 1rem;
+        padding: 2rem ;
+        border-top: 6px solid rgb(212, 124, 9);
       }
 
       .txt{
+        color: #777;
         text-align: center;
-        padding: 30px;
+        padding: 15px;
+        margin-bottom: 20px;
       }
 
       .Box{
         width: 100%;
         height: 50vh;
-        background: #777;
+        background: rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: space-around;
         align-items: center;
         margin-bottom: 60px;
         margin-top: 30px;
+        
 
         .box {
           width: 25%;
           height: 40vh;
-          background: #fff;
+          background:rgba(255, 255, 255, 0.7);
           text-align: center;
           display: flex;
           flex-direction: column; /* 수정: 요소들을 세로로 정렬하기 위해 */
           justify-content: center;
-          align-items: center; /* 추가: 요소들을 가운데 정렬 */
+          align-items: center; /* 추가: 요소들을 가운데 정렬 
+          */
+          transition: 0.8s;
+
+          &:hover{
+            transform: scale(0.95);
+          }
         
           h2 {
             margin-top: 20px;
@@ -50,11 +67,12 @@
           button {
             width: 30%;
             height: 5vh;
+            color:  rgb(204, 138, 52);
             align-items: center;
             margin-top: 30px;
             border: none;
-            background: #777;
-            transition: 1.1s;
+            background: #000000;
+            transition: 0.5s;
 
             &:hover{
               transform: scale(0.9);
@@ -63,12 +81,14 @@
         }
       }
   
+      
       article {
         width: 45%;
         display: flex;
         justify-content: center;
+        background: rgba(0, 0, 0, 0.3);
         padding: 3rem 0px;
-        box-shadow: 10px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: 10px 0px 20px 0px rgba(0, 0, 0, 0.4);
   
         .conbox {
           padding: 20px;
@@ -77,21 +97,22 @@
           p {
             font-size: 1em;
             margin-bottom: 10px;
-            color: #333;
+            color: #777;
           }
   
           span {
             font-size: 0.9em;
-            color: #555;
+            color: #777;
           }
         }
   
         .pic {
-			width: 100%;
-			height: 200px;
+            width: 100%;
+            height: 200px;  
             margin-right: 20px;
-			position: relative;
-			overflow: hidden;
+            position: relative;
+            overflow: hidden;
+            transition: 0.7s;
 
   
           img {
@@ -100,8 +121,11 @@
             object-fit: cover;
             position: absolute;
             top: 0;
-            transform: scale(1.5);
             cursor: pointer;
+          }
+
+          &:hover{
+            transform: scale(1.1);
           }
         }
       }

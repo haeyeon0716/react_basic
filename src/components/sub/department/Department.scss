@@ -1,11 +1,15 @@
 .Department {
+  background: #222;
   overflow: hidden;
     .content {
       width: 100%;
         h1 {
+            width: 45%;
             font-size: 7rem;
+            font-family:serif;
             padding-bottom: 2rem;
             padding: 2rem ;
+            border-top: 6px solid rgb(212, 124, 9);
         }
 
         .imgTxt{
@@ -16,71 +20,135 @@
             height: 80vh;
             background: #777;
             margin: 40px;
-            margin-top: 100px;
+            margin-top: 60px;
             margin-bottom: 100px;
-            transition: 1.1s;
+            transition: 0.8s;
+            border: 3px solid rgb(204, 138, 52);
+
+            img{
+              width:100%;
+              height: inherit;
+              object-fit: cover;
+            }
 
             &:hover{
-              transform: scale(1.1);
+              transform: scale(1.05);
             }
           }
   
           .txtBox{
-            width: 55%;
-            margin-right: 40px;
-            margin-top: 100px;
+            width: 60%;
+            background: rgba(0, 0, 0, 0.7); /* 배경색의 투명도 조절 */
+            margin-top: 50px;
             margin-bottom: 100px;
+
+            .txt{
+              color: rgb(204, 138, 52);
+              padding: 15px;
+            }
           }
 
         }
         
         
         
-        .TotalBox{
-            width: 100%;
-            height: 72vh;
-            display: flex;
-            justify-content: space-between;
-            background: #888;
+        hr{
+          width: 30%;
+          height: 7px;
+          margin: 0 auto;
+          background: rgb(204, 138, 52);
+          border: none;
+
+          &:nth-of-type(1){
+            width: 60%;
+            height: 3px;
+            background: #000;
+          }
+        }
+
+        .TotalBox {
+          width: 100%;
+          height: 72vh;
+          display: flex;
+          background: #888;
+          position: relative; /* 추가: 부모 요소에 상대적 위치 지정 */
 
         }
-        .box1{
-          width: 35%;
+        
+        .img {
+          position: absolute; /* 추가: 이미지에 절대적 위치 지정 */
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 72vh;
+        }
+        
+        img {
+          width: 100%;
+          height: 72vh;
+          background:  rgba(0, 0, 0, 0.7);
+        }
+        
+        .box1 {
+          width: 40%;
           height: 40vh;
+          background: rgba(0, 0, 0, 0.7);
           border-bottom: 1px solid #222;
           margin-top: 80px;
           margin-bottom: 30px;
           padding: 30px;
+          color: #ddd;
+          position: relative; /* 추가: 박스1에 상대적 위치 지정 */
+          z-index: 1; /* 추가: z-index를 이용하여 겹치는 순서 조절 */
+
+          &:hover{
+            color:rgb(204, 138, 52);
           }
-          .box2{
+        }
+        
+        .box2 {
           width: 60%;
           height: 60vh;
+          background: rgba(0, 0, 0, 0.7);
           border-bottom: 1px solid #222;
           margin-bottom: 30px;
           margin-top: 55px;
-          padding-right: 30px;
+          margin-left: 50px;
+          padding: 20px;
+          color: #ddd;
+          position: relative; /* 추가: 박스2에 상대적 위치 지정 */
+          z-index: 1; /* 추가: z-index를 이용하여 겹치는 순서 조절 */
+
+          &:hover{
+            color:rgb(204, 138, 52);
           }
+        }
 
 
+        
           .mainbox {
             width: 100%;
             display: flex;
             justify-content: center; /* 가로 가운데 정렬 */
-            margin-top: 100px;
-            border-top:1px solid #777;
+            margin-top: 70px;
 
             article {
               width: 30%;
               height: 35vh;
               margin: 70px auto;
-              border: 1px solid #ddd;
-              border-bottom: 2px solid #444;
-              transition: 1.1s;
+              border: 3px solid rgb(204, 138, 52);
+              transition: 0.8s;
         
           .pic {
             width: 100%;
             height: 150px;
             background: #777;
+
+            img{
+              width: 100%;
+              height: 150px;
+              object-fit: cover;
+            }
           }
         
           .txtbox {
@@ -90,13 +158,13 @@
         
             h2 {
               font: bold 18px/1 'arial';
-              color: #555;
+              color: rgb(204, 138, 52);
               margin-bottom: 20px;
             }
         
             p {
               font: 14px/1.3 'arial';
-              color: #777;
+              color: #ffffff;
               margin-bottom: 30px;
             }
           }
@@ -111,7 +179,7 @@
         width: 100%;
         height: 50vh;
         margin-top: 70px;
-        background: #777;
+        background:rgb(175, 112, 29);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -137,10 +205,18 @@
         button {
           width: 10%;
           height: 35px;
+          background: #000;
           text-align: center;
           align-items: center;
           margin: 20px auto; /* 수정: 마진 값 조정 */
-          margin-top: 100px;
+          margin-top: 50px;
+          transition: 0.5s;
+          color: rgb(204, 138, 52);
+          border: 1px solid rgb(204, 138, 52);
+
+          &:hover{
+            transform: scale(1.2);
+          }
         }
       }
 

@@ -22,15 +22,17 @@ export default function Department() {
 
 	return (
 		<Layout title={'Department'}>
+			<hr />
 
 			<div className="imgTxt">
 			<div className="imgBox">
-				<div className="img"></div>
+			<img src={process.env.PUBLIC_URL + 'img/background2.jpg'}/>
 			</div>
 
 			<div className="txtBox">
 				<div className="txt">
 					<h2>Lorem, ipsum dolor.</h2>
+					<br />
 					<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis ipsa illum sunt ratione, explicabo consequuntur at perspiciatis optio veritatis maiores? Corporis illo deleniti quod commodi sapiente corrupti quas dolor ipsum provident voluptate dolorum, rerum eius eligendi veritatis a exercitationem voluptatem porro eveniet dolorem qui perspiciatis! Voluptas, possimus? Ex similique, veniam, itaque illo est quibusdam dignissimos, sit ullam dicta voluptatibus commodi.</span>
 					<br />
 					<br />
@@ -42,7 +44,11 @@ export default function Department() {
 				</div>	
 			</div>		
 
+		<hr />
 		<div className="TotalBox">
+			<div className="img">
+			<img src={process.env.PUBLIC_URL + 'img/bg3.jpg'}/>
+			</div>
 		<div className="box1">
 			<h2>Lorem, ipsum dolor.</h2>
 			<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum sint nobis illum iusto quia rem necessitatibus, molestiae possimus voluptatibus! Neque pariatur suscipit ducimus animi, tenetur assumenda temporibus commodi. Maiores, consectetur sunt, veniam aut fugiat reiciendis explicabo aliquam, molestias consequatur earum assumenda! Esse, nam quas? Earum officia quisquam deleniti reprehenderit placeat facere voluptate. Numquam quidem animi sequi omnis ipsa laudantium qui?
@@ -57,9 +63,12 @@ export default function Department() {
 			<span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo optio, facilis illo modi nihil enim reiciendis numquam ad ut quisquam reprehenderit repellendus sapiente aut similique et? Cum nemo ea sapiente illum voluptas doloribus repellat ullam voluptates laudantium, laboriosam quaerat eum.</span>
 		</div>
 		</div>
+		<hr />
 		<div className="mainbox">
 				<article>
-                    <div class="pic"></div>
+                    <div class="pic">
+					<img src={process.env.PUBLIC_URL + 'img/yellow1.jpg'}/>
+					</div>
                     <div class="txtbox">
                         <h2>Lorem ipsum dolor sit.</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, magni.</p>
@@ -67,14 +76,18 @@ export default function Department() {
                     </div>
                 </article>
 				<article>
-                    <div class="pic"></div>
+                    <div class="pic">
+					<img src={process.env.PUBLIC_URL + 'img/yellow1.jpg'}/>
+					</div>
                     <div class="txtbox">
                         <h2>Lorem ipsum dolor sit.</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, magni.</p>
                     </div>
                 </article>
 				<article>
-                    <div class="pic"></div>
+                    <div class="pic">
+					<img src={process.env.PUBLIC_URL + 'img/yellow1.jpg'}/>
+					</div>
                     <div class="txtbox">
                         <h2>Lorem ipsum dolor sit.</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, magni.</p>

@@ -31,12 +31,18 @@ export default function Youtube() {
 		<>
 			<Layout title={'Youtube'}>
 				<div className="txt">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti praesentium totam temporibus distinctio, 
+					<br />
+					asperiores dolorum qui at earum vitae exercitationem adipisci incidunt sunt, unde expedita ipsum cupiditate tempora odit!
+					<br />
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet velit fugit tenetur vero consequatur vel neque, dolore ex optio deserunt,
 					<br />
 					voluptatibus, id non labore explicabo error totam! Illo, itaque id, culpa dolore perferendis libero est magnam a ipsa, aut distinctio.
 				</div>
 
+
 				<div className="Box">
+				<hr />
 					<div className="box">
 						<h2>Lorem, ipsum.</h2>
 						<br />
@@ -63,7 +69,7 @@ export default function Youtube() {
 					let desc = data.snippet.description;
 					let date = data.snippet.publishedAt;
 
-					return (
+					return (			
 						<article key={idx}>
 							{/* titbox */}
 							<div className="conbox">

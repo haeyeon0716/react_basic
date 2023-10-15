@@ -1,14 +1,22 @@
 .Community {
+	background: #222;
+	overflow: hidden;
+
 	.content {
 		width: 100%;
+		background: #222;
 
 		h1{
+			width: 45%;
             font-size: 7rem;
+			font-family:serif;
             padding-bottom: 2rem;
             padding: 2rem ;
+            border-top: 6px solid rgb(212, 124, 9);
 		}
 
 		.totalBox{
+
 			width: 80%;
 			display: flex;
 			margin-top: 50px;
@@ -18,17 +26,23 @@
 				height: 50vh;
 				background: #777;
 				margin-left: 35px;
+
+				img{
+					width: 100%;
+					height: 50vh;
+					object-fit: cover;
+				}
 			  }
 	
 			.txtBox{
 				width: 35%;
-				height: 50vh;
 				margin-left: 10px;
 				text-align: center;
 				align-items: center;
-				border-top: 1px solid #777;
+				border-top: 2.3px solid #000000;
 
 				h2,span{
+					color:rgb(212, 124, 9);
 					align-items: center;
 					padding: 40px;
 				}
@@ -41,20 +55,22 @@
 			justify-content: space-around;
 			
 			.inputBox {
+				color: #000;
 				width: 60%;
 				height: 30vh;
 				margin-bottom: 50px;
-				border-top: 1px solid #aaa;
+				border-top: 2.3px solid #000000;
 				padding: 50px;
 			
 				input[type='text'],
 				textarea {
-					width: 80%;
+					width: 100%;
 					padding: 8px 10px;
-					border: 1px solid #aaa;
+					border: 1px solid #000000;
 					resize: none;
+					margin-top: 25px;
 					margin-bottom: 10px;
-					background: #f0fdff;
+					background: hsl(0, 0%, 23%);
 				}
 			
 				.btnSet button {
@@ -62,7 +78,7 @@
 					height: 30px;
 					display: inline-block;
 					border: none;
-					background: #555;
+					background: rgb(212, 124, 9);
 					margin-right: 20px;
 					color: #fff;
 					cursor: pointer;
@@ -73,7 +89,7 @@
 		.showBox {
 			width: 30%;
 			height: 30vh;
-			border-top: 1px solid #aaa;
+			border-top: 2.3px solid #000000;
 			padding: 50px;
 
 			article {
