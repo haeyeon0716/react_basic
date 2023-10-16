@@ -11,6 +11,7 @@ export default function Members() {
 		gender: false,
 		interests: false,
 		edu: '',
+		comments: '',
 	};
 	const [Val, setVal] = useState(initVal);
 	const [Errs, setErrs] = useState({});
@@ -27,13 +28,17 @@ export default function Members() {
 		setVal({ ...Val, [name]: checked });
 	};
 
-	//체크 하였다가 다시 체크를 해지 하면 false값이 반환되는 것ㅇ을 반지하기 위한 함수
 	const handleCheck = (e) => {
-		const {name} = e.target;
+		const { name } = e.target;
 		let isChecked = false;
 		const inputs = e.target.parentElement.querySelectorAll('input');
 		inputs.forEach((input) => input.checked && (isChecked = true));
 		setVal({ ...Val, [name]: isChecked });
+	};
+
+	const resetForm = (e) => {
+		e.preventDefault();
+		setVal(initVal);
 	}
 
 	const check = (value) => {
@@ -78,10 +83,10 @@ export default function Members() {
 
 		//성별인증
 		if (!value.gender) {
-			errs.gender = '성별은 필수 체크 항목입니다.';
+			errs.gender = '성별은 필수 체크항목입니다.';
 		}
 
-		//관심사 인증
+		//관심사인증
 		if (!value.interests) {
 			errs.interests = '관심사를 하나이상 체크해주세요.';
 		}
@@ -90,7 +95,10 @@ export default function Members() {
 		if (!value.edu) {
 			errs.edu = '학력을 선택하세요.';
 		}
-
+		//남기는말 인증
+		if (value.comments.length < 10) {
+			errs.comments = '남기는말은 10글자 이상 입력하세요.';
+		}
 		return errs;
 	};
 
@@ -201,18 +209,33 @@ export default function Members() {
 								</td>
 							</tr>
 
-							{/* interest */}
+							{/* interests */}
 							<tr>
-								<th>interest</th>
+								<th>interests</th>
 								<td>
-									<label htmlFor="sports">sports</label>
-									<input type="checkBox" id='sports' name='interests' onChange={handleCheck} />
+									<label htmlFor='sports'>sports</label>
+									<input
+										type='checkbox'
+										id='sports'
+										name='interests'
+										onChange={handleCheck}
+									/>
 
-									<label htmlFor="music">music</label>
-									<input type="checkBox" id='music' name='interests' onChange={handleCheck} />
+									<label htmlFor='game'>game</label>
+									<input
+										type='checkbox'
+										id='game'
+										name='interests'
+										onChange={handleCheck}
+									/>
 
-									<label htmlFor="game">game</label>
-									<input type="checkBox" id='game' name='interests' onChange={handleCheck} />
+									<label htmlFor='music'>music</label>
+									<input
+										type='checkbox'
+										id='music'
+										name='interests'
+										onChange={handleCheck}
+									/>
 									{Errs.interests && <p>{Errs.interests}</p>}
 								</td>
 							</tr>
@@ -220,23 +243,42 @@ export default function Members() {
 							{/* education */}
 							<tr>
 								<th>
-									<label htmlFor="edu">Education</label>
+									<label htmlFor='edu'>Education</label>
 								</th>
 								<td>
-									<select name="edu" id="edu" onChange={handleChange}>
-										<option value="">최종학력 선택하세요</option>
-										<option value="element-school">초등학교 졸업</option>
-										<option value="high-school">고등학교 졸업</option>
-										<option value="collage">대학교 졸업</option>
+									<select name='edu' id='edu' onChange={handleChange}>
+										<option value=''>최종학력 선택하세요</option>
+										<option value='elementary-school'>초등학교 졸업</option>
+										<option value='middle-school'>중학교 졸업</option>
+										<option value='high-school'>고등학교 졸업</option>
+										<option value='college'>대학교 졸업</option>
 									</select>
 									{Errs.edu && <p>{Errs.edu}</p>}
+								</td>
+							</tr>
+
+							{/* comments */}
+							<tr>
+								<th>
+									<label htmlFor='comments'>comments</label>
+								</th>
+								<td>
+									<textarea
+										name='comments'
+										id=''
+										cols='30'
+										rows='3'
+										value={Val.comments}
+										onChange={handleChange}
+									></textarea>
+									{Errs.comments && <p>{Errs.comments}</p>}
 								</td>
 							</tr>
 
 							{/* btnSet */}
 							<tr>
 								<th colSpan='2'>
-									<input type='reset' value='cancel' />
+									<input type='reset' value='cancel' onClick={resetForm}/>
 									<input type='submit' value='send' />
 								</th>
 							</tr>
