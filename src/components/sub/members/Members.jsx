@@ -13,23 +13,59 @@ export default function Members() {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		console.log(name, value);
-		setVal({...Val, [name]: value});
+		setVal({ ...Val, [name]: value });
 	};
 
-	//인수값으로 state를 전달 받아서 각 데이터별로 인증 처리후 
-	//만약 인증 에러가 발생하면 해당 name값으로 에러문구를 생성해서 반환하는 함수
-	const check = (value) =>{
-		const errors = {};
-		if (value.userid.length<5){
-			errors.userid = '아이디는 최소 5글자 이상 입력하세요';
-		}
-		return errors;
-	}
+	//인수값으로 state를 전달받아서 각 데이터별로 인증처리후
+	//만약 인증에러가 발생하면 해당 name값으로 에러문구를 생성해서 반환하는 함수
+	const check = (value) => {
+		const num = /[0-9]/; //0-9까지의 모든 값을 정규표현식으로 범위지정
+		const txt = /[a-zA-Z]/; //대소문자 구분없이 모든 문자 범위지정
+		const spc = /[!@#$%^*()_]/; //모든 특수문자 지정
+		const errs = {};
 
-	//전송이벤트 발생시 state에 있는 input값들을 check함수에 전달해서 호출
-	//만약 checck함수가 에러객체를 하나도 내보내지 않으면 인증 성공
-	//하나라도 에러 객체 전달 되면 인증처리 실패 처리 하면서 name값과 매칭이 되는 input요소 아래쪽에 에러 메세지 출력 
+		if (value.userid.length < 5) {
+			errs.userid = '아이디는 최소 5글자 이상 입력하세요.';
+		}
+
+		//비밀번호 인증 (5글자 이상, 문자, 숫자, 특수문자 모두 포함)
+		if (
+			value.pwd1.length < 5 ||
+			!num.test(value.pwd1) ||
+			!txt.test(value.pwd1) ||
+			!spc.test(value.pwd1)
+		) {
+			errs.pwd1 = '비밀번호는 5글자이상, 문자,숫자,특수문자를 모두 포함하세요';
+		}
+
+		//비밀번호 재확인 인증
+		if (value.pwd1 !== value.pwd2) {
+			errs.pwd2 = '2개의 비밀번호를 같게 입력하세요.';
+		}
+
+		//이메일 인증
+
+		if (!value.email || !/@/.test(value.email)) {
+			errs.email = '이메일은 무조건 @를 포함해야 합니다.';
+		} else {
+			if (!value.email.split('@')[0] || !value.email.split('@')[1]) {
+				errs.email = '이메일에 @앞뒤로 문자값이 있어야 합니다.';
+			} else {
+				if (
+					!value.email.split('@')[1].split('.')[0] ||
+					!value.email.split('@')[1].split('.')[1]
+				) {
+					errs.email = '이메일 . 앞뒤로 문자값이 있어야 합니다.';
+				}
+			}
+		}
+
+		return errs;
+	};
+
+	//전송이벤트 발생시 state에 있는 인풋값들을 check함수에 전달해서 호출
+	//만약 check함수가 에러객체를 하나도 내보내지 않으면 인증성공
+	//하나라도 에러객체가 전달되면 인증실패처리하면서 name값과 매칭이 되는 input요소 아래쪽에 에러메세지 출력
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(check(Val));

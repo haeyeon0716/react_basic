@@ -42,7 +42,6 @@ export default function Youtube() {
 
 
 				<div className="Box">
-				<hr />
 					<div className="box">
 						<h2>Lorem, ipsum.</h2>
 						<br />
