@@ -10,6 +10,7 @@ export default function Members() {
 		email: '',
 		gender: false,
 		interests: false,
+		edu: '',
 	};
 	const [Val, setVal] = useState(initVal);
 	const [Errs, setErrs] = useState({});
@@ -83,6 +84,11 @@ export default function Members() {
 		//관심사 인증
 		if (!value.interests) {
 			errs.interests = '관심사를 하나이상 체크해주세요.';
+		}
+
+		//학력 인증
+		if (!value.edu) {
+			errs.edu = '학력을 선택하세요.';
 		}
 
 		return errs;
@@ -208,6 +214,22 @@ export default function Members() {
 									<label htmlFor="game">game</label>
 									<input type="checkBox" id='game' name='interests' onChange={handleCheck} />
 									{Errs.interests && <p>{Errs.interests}</p>}
+								</td>
+							</tr>
+
+							{/* education */}
+							<tr>
+								<th>
+									<label htmlFor="edu">Education</label>
+								</th>
+								<td>
+									<select name="edu" id="edu" onChange={handleChange}>
+										<option value="">최종학력 선택하세요</option>
+										<option value="element-school">초등학교 졸업</option>
+										<option value="high-school">고등학교 졸업</option>
+										<option value="collage">대학교 졸업</option>
+									</select>
+									{Errs.edu && <p>{Errs.edu}</p>}
 								</td>
 							</tr>
 
