@@ -1,6 +1,6 @@
 import Layout from '../../common/layout/Layout';
 import './Members.scss';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function Members() {
 	const initVal = {
@@ -13,10 +13,26 @@ export default function Members() {
 		edu: '',
 		comments: '',
 	};
+	const refCheckGroup = useRef(null);
+	const refRadioGroup = useRef(null);
 	const [Val, setVal] = useState(initVal);
 	const [Errs, setErrs] = useState({});
 
-	console.log(Errs);
+	const resetForm = (e) => {
+		e.preventDefault();
+		setVal(initVal);
+		/*
+		const checks = refCheckGroup.current.querySelectorAll('input');
+		const radios = refRadioGroup.current.querySelectorAll('input');
+		checks.forEach((input) => (input.checked = false));
+		radios.forEach((input) => (input.checked = false));
+    */
+		[refCheckGroup, refRadioGroup].forEach((el) =>
+			el.current
+				.querySelectorAll('input')
+				.forEach((input) => (input.checked = false))
+		);
+	};
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -35,11 +51,6 @@ export default function Members() {
 		inputs.forEach((input) => input.checked && (isChecked = true));
 		setVal({ ...Val, [name]: isChecked });
 	};
-
-	const resetForm = (e) => {
-		e.preventDefault();
-		setVal(initVal);
-	}
 
 	const check = (value) => {
 		const num = /[0-9]/; //0-9까지의 모든 값을 정규표현식으로 범위지정
@@ -104,6 +115,7 @@ export default function Members() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
 		if (Object.keys(check(Val)).length === 0) {
 			alert('인증통과');
 		} else {
@@ -189,7 +201,7 @@ export default function Members() {
 							{/* gender */}
 							<tr>
 								<th>gender</th>
-								<td>
+								<td ref={refRadioGroup}>
 									<label htmlFor='female'>female</label>
 									<input
 										type='radio'
@@ -212,7 +224,7 @@ export default function Members() {
 							{/* interests */}
 							<tr>
 								<th>interests</th>
-								<td>
+								<td ref={refCheckGroup}>
 									<label htmlFor='sports'>sports</label>
 									<input
 										type='checkbox'
@@ -278,7 +290,7 @@ export default function Members() {
 							{/* btnSet */}
 							<tr>
 								<th colSpan='2'>
-									<input type='reset' value='cancel' onClick={resetForm}/>
+									<input type='reset' value='cancel' onClick={resetForm} />
 									<input type='submit' value='send' />
 								</th>
 							</tr>
