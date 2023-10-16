@@ -9,6 +9,7 @@ export default function Members() {
 		pwd2: '',
 		email: '',
 		gender: false,
+		interests: false,
 	};
 	const [Val, setVal] = useState(initVal);
 	const [Errs, setErrs] = useState({});
@@ -24,6 +25,15 @@ export default function Members() {
 		const { name, checked } = e.target;
 		setVal({ ...Val, [name]: checked });
 	};
+
+	//체크 하였다가 다시 체크를 해지 하면 false값이 반환되는 것ㅇ을 반지하기 위한 함수
+	const handleCheck = (e) => {
+		const {name} = e.target;
+		let isChecked = false;
+		const inputs = e.target.parentElement.querySelectorAll('input');
+		inputs.forEach((input) => input.checked && (isChecked = true));
+		setVal({ ...Val, [name]: isChecked });
+	}
 
 	const check = (value) => {
 		const num = /[0-9]/; //0-9까지의 모든 값을 정규표현식으로 범위지정
@@ -67,7 +77,12 @@ export default function Members() {
 
 		//성별인증
 		if (!value.gender) {
-			errs.gender = '성별을 하나이상 체크해주세요.';
+			errs.gender = '성별은 필수 체크 항목입니다.';
+		}
+
+		//관심사 인증
+		if (!value.interests) {
+			errs.interests = '관심사를 하나이상 체크해주세요.';
 		}
 
 		return errs;
@@ -177,6 +192,22 @@ export default function Members() {
 										onChange={handleRadio}
 									/>
 									{Errs.gender && <p>{Errs.gender}</p>}
+								</td>
+							</tr>
+
+							{/* interest */}
+							<tr>
+								<th>interest</th>
+								<td>
+									<label htmlFor="sports">sports</label>
+									<input type="checkBox" id='sports' name='interests' onChange={handleCheck} />
+
+									<label htmlFor="music">music</label>
+									<input type="checkBox" id='music' name='interests' onChange={handleCheck} />
+
+									<label htmlFor="game">game</label>
+									<input type="checkBox" id='game' name='interests' onChange={handleCheck} />
+									{Errs.interests && <p>{Errs.interests}</p>}
 								</td>
 							</tr>
 
