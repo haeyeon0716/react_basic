@@ -3,8 +3,12 @@ import { useState } from 'react';
 
 function News() {
 	const getLocalData = () => {
+		//프로젝트가 처음 구동 되면 무조건 메인페이지에 갔다가 커뮤니티 페이지에 넘어가는 구조 
+		//해당 페이지에 있는 함수가 처음 구동할 시 로컬 저장소에 값이 없으므로
+		//저장소값이 없을 때 빈 배열이 반환되는 구문 추가 (중요)
 		const data = localStorage.getItem('post');
-		return JSON.parse(data);
+		if (data) return JSON.parse(data);
+		else return [];
 	};
 	const [Post] = useState(getLocalData());
 
