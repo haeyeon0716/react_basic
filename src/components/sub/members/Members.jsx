@@ -15,6 +15,7 @@ export default function Members() {
 	};
 	const refCheckGroup = useRef(null);
 	const refRadioGroup = useRef(null);
+	const refSelGroup = useRef(null);
 	const [Val, setVal] = useState(initVal);
 	const [Errs, setErrs] = useState({});
 
@@ -32,6 +33,7 @@ export default function Members() {
 				.querySelectorAll('input')
 				.forEach((input) => (input.checked = false))
 		);
+		refSelGroup.current.value = '';
 	};
 
 	const handleChange = (e) => {
@@ -258,7 +260,12 @@ export default function Members() {
 									<label htmlFor='edu'>Education</label>
 								</th>
 								<td>
-									<select name='edu' id='edu' onChange={handleChange}>
+									<select
+										name='edu'
+										id='edu'
+										onChange={handleChange}
+										ref={refSelGroup}
+									>
 										<option value=''>최종학력 선택하세요</option>
 										<option value='elementary-school'>초등학교 졸업</option>
 										<option value='middle-school'>중학교 졸업</option>
