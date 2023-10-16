@@ -130,6 +130,27 @@ export default function Members() {
 			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='h'>회원가입 폼 양식</legend>
+					<div className="totalBox">
+					<section>
+						<article>1</article>
+						<article>2</article>
+						<article>3</article>
+					</section>
+
+					<div className="txtBox">
+						<h2>Lorem, ipsum.</h2>
+						<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni praesentium dignissimos ipsa id eligendi excepturi veniam ea sapiente aliquid? Enim ipsum modi distinctio animi, labore sequi asperiores nisi odit alias!</span>
+					</div>
+					</div>
+
+					<div className="Total">
+					<div className="Box">
+					<div className="imgBox"></div>
+					<div className="txtb">
+						<h2>Lorem, ipsum.</h2>
+						<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, animi qui optio, vel ipsam ipsa obcaecati exercitationem, saepe harum provident quas modi hic architecto. Laboriosam delectus dolore eius assumenda animi.</span>
+					</div>
+					</div>
 					<table border='1'>
 						<tbody>
 							{/* userid */}
@@ -303,6 +324,7 @@ export default function Members() {
 							</tr>
 						</tbody>
 					</table>
+					</div>
 				</fieldset>
 			</form>
 		</Layout>

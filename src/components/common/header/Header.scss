@@ -1,4 +1,3 @@
-@import '/src/styles/Variable.scss';
 
 .header {
 	width: 100%;
@@ -40,10 +39,4 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
-	.header {
-		ul {
-			display: none;
-		}
-	}
-}
+
