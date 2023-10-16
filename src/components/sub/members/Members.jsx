@@ -13,7 +13,10 @@ export default function Members() {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
+
+		//현재 onChange 이벤트가 발생하고 있는 form 요소의 Iname 값을 객체 안에서 변수로 가져오고 value값도 가져온 뒤 기존의 state값을 deep copy 한 뒤 내가 입력하고 있는 input의 property값만 덮어쓰기
 		console.log(name, value);
+		setVal({...Val, [name]: value});
 	};
 
 	return (
@@ -81,6 +84,7 @@ export default function Members() {
 										type='text'
 										id='email'
 										name='email'
+										//onChange가 발생할 때 마다 실시간으로 변경되고 있는 state의 value값을 출력
 										value={Val.email}
 										onChange={handleChange}
 									/>
