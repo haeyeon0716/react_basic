@@ -1,9 +1,8 @@
 .Contact {
-	background: #222;
 	overflow: hidden;
 
 	figure {
-		background: orange;
+		background: rgb(25, 45, 97);
 	}
 
 	.content {
@@ -17,7 +16,7 @@
 			font-family:serif;
 			padding-bottom: 1rem;
 			padding: 2rem ;
-			border-top: 6px solid rgb(212, 124, 9);
+			border-top: 6px solid rgb(25, 45, 97);
 		}
 
 		.imgBox{
@@ -43,13 +42,13 @@
 				
 				h2{
 					font-size: 3rem;
-					color: rgb(212, 124, 9);
+					color: rgb(25, 45, 97);
 				}
 			}
 			.box2{
 				width: 100%;
 				background: #f8f8f8;
-				border-top: 5px solid rgb(238, 142, 15);
+				border-top: 5px solid rgb(25, 45, 97);
 				margin-left: 1.5rem;
 				flex-wrap: wrap;
 				align-items: center;
@@ -60,7 +59,7 @@
 					width: 90%;
 					height: 15vh;
 					padding: 10px;
-					background: rgb(238, 142, 15, 0.5);
+					background: rgb(25, 45, 97, 0.5);
 					margin: 20px auto;
 
 					img{
@@ -108,7 +107,7 @@
 
 						label {
 							font: bold 1rem/1 'arial';
-							color: #ddd;
+							color: rgb(25, 45, 97);
 							width: 100%;
 							position: relative;
 						}
@@ -136,7 +135,7 @@
 						display: block;
 						margin-bottom: 5px;
 						font: bold 1rem/1 'arial';
-						color: #ddd;
+						color: rgb(25, 45, 97);
 					}
 					textarea {
 						width: 100%;
@@ -167,10 +166,10 @@
 						height: 40px;
 						margin: 30px auto;
 						background: transparent;
-						background: rgb(212, 124, 9);
+						background: rgb(25, 45, 97);
 						border:none;
 						font: 1rem/40px 'arial';
-						color: #000000;
+						color: #ddd;
 						text-align: center;
 
 
@@ -179,11 +178,11 @@
 			}
 
 			#etc {
-				color: #ddd;
+				color: #3b3b3b;
 				width: 50%;
 				height: 300px;
 				padding-left: 50px;
-				border-left: 1px solid rgb(212, 124, 9);
+				border-left: 1px solid rgb(25, 45, 97);
 			}
 		}
 
@@ -209,9 +208,9 @@
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						background: #000;
+						background: hsl(0, 0%, 84%);
 						font: 1rem/40px 'arial';
-						color: rgb(212, 124, 9);
+						color: rgb(24, 57, 139);
 						border: none;
 						text-align: center;
 						transition: 0.5s;
@@ -240,9 +239,9 @@
 						display: flex;
 						justify-content: center;
 						align-items: center;
-						background: #000000;
+						background: hsl(0, 0%, 84%);
 						font: 1rem/40px 'arial';
-						color: rgb(212, 124, 9);
+						color: rgb(24, 57, 139);
 						text-align: center;
 						transition: 0.5s;
 
@@ -252,7 +251,7 @@
 					}
 		
 					li.on {
-						color: rgb(178, 178, 178);
+						color: rgb(128, 128, 128);
 					}
 				}
 			}

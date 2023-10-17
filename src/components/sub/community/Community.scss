@@ -1,5 +1,4 @@
 .Community {
-	background: #222;
 	overflow: hidden;
 
 	.content {
@@ -11,7 +10,7 @@
 			font-family:serif;
             padding-bottom: 2rem;
             padding: 2rem ;
-            border-top: 6px solid rgb(212, 124, 9);
+            border-top: 6px solid rgb(25, 45, 97);
 		}
 		  
 		  section{
@@ -42,7 +41,7 @@
 					height: 30px;
 					display: inline-block;
 					border: none;
-					background: rgb(212, 124, 9);
+					background: rgb(25, 45, 97);
 					margin-right: 20px;
 					color: #fff;
 					cursor: pointer;
@@ -74,7 +73,7 @@
 					textarea {
 						width: 50%;
 						padding: 8px 10px;
-						border: 1px solid #aaa;
+						border: 1px solid #000000;
 						resize: none;
 						margin-bottom: 10px;
 						background: #f0fdff;
@@ -93,10 +92,10 @@
 						background: transparent;
 						cursor: pointer;
 						&:nth-of-type(1) {
-							color: orange;
+							color:rgb(25, 45, 97);
 						}
 						&:nth-of-type(2) {
-							color: #666;
+							color: #000000;
 						}
 					}
 				}

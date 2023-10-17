@@ -27,7 +27,6 @@ export default function Department() {
 		<div className="mainbox">
 				<article>
                     <div class="pic">
-					<img src={process.env.PUBLIC_URL + 'img/yellow1.jpg'}/>
 					</div>
                     <div class="txtbox">
                         <h2>Lorem ipsum dolor sit.</h2>
@@ -36,7 +35,6 @@ export default function Department() {
                 </article>
 				<article>
                     <div class="pic">
-					<img src={process.env.PUBLIC_URL + 'img/yellow1.jpg'}/>
 					</div>
                     <div class="txtbox">
                         <h2>Lorem ipsum dolor sit.</h2>
@@ -45,7 +43,6 @@ export default function Department() {
                 </article>
 				<article>
                     <div class="pic">
-					<img src={process.env.PUBLIC_URL + 'img/yellow1.jpg'}/>
 					</div>
                     <div class="txtbox">
                         <h2>Lorem ipsum dolor sit.</h2>
