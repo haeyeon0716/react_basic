@@ -37,8 +37,7 @@ const youtubeSlice = createSlice({
         [fetchYoutube.rejected] : (state, action) => {
             state.isLoading = false;
             state.data = action.payload;
-        },
-        
+        },     
     }
 })
 
