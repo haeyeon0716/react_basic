@@ -25,6 +25,10 @@
 			}
 		}
 	}
+
+	.bars{
+		display: none;
+	}
 }
 
 .header.main {
@@ -39,10 +43,15 @@
 	}
 }
 
-.tablet {
+.tablet,
+.mobile {
 	.header {
 		ul {
 			display: none;
+		}
+
+		.bars{
+			display: block;
 		}
 	}
 }

@@ -181,19 +181,6 @@ export default function Community() {
 				})}
 			</div>
 			</section>
-			<div className="totalBox">
-			<div className="imgBox">
-			<img src={process.env.PUBLIC_URL + 'img/background2.jpg'}/>
-			</div>
-			<div className="txtBox">
-				<h2>Lorem, ipsum.</h2>
-				<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, ratione tenetur! Eos quas minima praesentium sunt inventore sint, incidunt error! Harum mollitia incidunt nostrum saepe.
-				<br />
-				<br />
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate enim, provident quia autem accusamus nostrum aut molestias obcaecati! Eum blanditiis ea expedita recusandae maiores minus neque vitae accusantium reprehenderit ad.
-				</span>
-			</div>
-			</div>
 		</Layout>
 	);
 }

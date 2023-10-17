@@ -130,33 +130,15 @@ export default function Members() {
 			<form onSubmit={handleSubmit}>
 				<fieldset>
 					<legend className='h'>회원가입 폼 양식</legend>
-					<div className="totalBox">
-					<section>
-						<article>1</article>
-						<article>2</article>
-						<article>3</article>
-					</section>
-
-					<div className="txtBox">
-						<h2>Lorem, ipsum.</h2>
-						<span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni praesentium dignissimos ipsa id eligendi excepturi veniam ea sapiente aliquid? Enim ipsum modi distinctio animi, labore sequi asperiores nisi odit alias!</span>
-					</div>
-					</div>
-
 					<div className="Total">
 					<div className="Box">
-					<div className="imgBox"></div>
-					<div className="txtb">
-						<h2>Lorem, ipsum.</h2>
-						<span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, animi qui optio, vel ipsam ipsa obcaecati exercitationem, saepe harum provident quas modi hic architecto. Laboriosam delectus dolore eius assumenda animi.</span>
-					</div>
 					</div>
 					<table border='1'>
 						<tbody>
 							{/* userid */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='userid'>userid</label>
+									<label htmlFor='userid'>Userid</label>
 								</th>
 								<td>
 									<input
@@ -165,6 +147,7 @@ export default function Members() {
 										name='userid'
 										value={Val.userid}
 										onChange={handleChange}
+										placeholder='아이디를 입력하세요'
 									/>
 									{Errs.userid && <p>{Errs.userid}</p>}
 								</td>
@@ -173,7 +156,7 @@ export default function Members() {
 							{/* password */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='pwd1'>password</label>
+									<label htmlFor='pwd1'>Password</label>
 								</th>
 								<td>
 									<input
@@ -182,6 +165,7 @@ export default function Members() {
 										name='pwd1'
 										value={Val.pwd1}
 										onChange={handleChange}
+										placeholder='비밀번호를 입력하세요'
 									/>
 									{Errs.pwd1 && <p>{Errs.pwd1}</p>}
 								</td>
@@ -190,7 +174,7 @@ export default function Members() {
 							{/* re password */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='pwd2'>re-password</label>
+									<label htmlFor='pwd2'>Re-password</label>
 								</th>
 								<td>
 									<input
@@ -199,6 +183,7 @@ export default function Members() {
 										name='pwd2'
 										value={Val.pwd2}
 										onChange={handleChange}
+										placeholder='비밀번호를 재입력하세요'
 									/>
 									{Errs.pwd2 && <p>{Errs.pwd2}</p>}
 								</td>
@@ -207,7 +192,7 @@ export default function Members() {
 							{/* email */}
 							<tr>
 								<th scope='row'>
-									<label htmlFor='email'>e-mail</label>
+									<label htmlFor='email'>E-mail</label>
 								</th>
 								<td>
 									<input
@@ -216,6 +201,7 @@ export default function Members() {
 										name='email'
 										value={Val.email}
 										onChange={handleChange}
+										placeholder='이메일을 입력하세요'
 									/>
 									{Errs.email && <p>{Errs.email}</p>}
 								</td>
@@ -225,7 +211,7 @@ export default function Members() {
 							<tr>
 								<th>gender</th>
 								<td ref={refRadioGroup}>
-									<label htmlFor='female'>female</label>
+									<label htmlFor='female'>Female</label>
 									<input
 										type='radio'
 										name='gender'
@@ -233,7 +219,7 @@ export default function Members() {
 										onChange={handleRadio}
 									/>
 
-									<label htmlFor='male'>male</label>
+									<label htmlFor='male'>Male</label>
 									<input
 										type='radio'
 										name='gender'
@@ -248,7 +234,7 @@ export default function Members() {
 							<tr>
 								<th>interests</th>
 								<td ref={refCheckGroup}>
-									<label htmlFor='sports'>sports</label>
+									<label htmlFor='sports'>Sports</label>
 									<input
 										type='checkbox'
 										id='sports'
@@ -256,7 +242,7 @@ export default function Members() {
 										onChange={handleCheck}
 									/>
 
-									<label htmlFor='game'>game</label>
+									<label htmlFor='game'>Game</label>
 									<input
 										type='checkbox'
 										id='game'
@@ -264,7 +250,7 @@ export default function Members() {
 										onChange={handleCheck}
 									/>
 
-									<label htmlFor='music'>music</label>
+									<label htmlFor='music'>Music</label>
 									<input
 										type='checkbox'
 										id='music'
@@ -300,7 +286,7 @@ export default function Members() {
 							{/* comments */}
 							<tr>
 								<th>
-									<label htmlFor='comments'>comments</label>
+									<label htmlFor='comments'>Comments</label>
 								</th>
 								<td>
 									<textarea
@@ -310,6 +296,7 @@ export default function Members() {
 										rows='3'
 										value={Val.comments}
 										onChange={handleChange}
+										placeholder='본문내용을 입력하세요'
 									></textarea>
 									{Errs.comments && <p>{Errs.comments}</p>}
 								</td>

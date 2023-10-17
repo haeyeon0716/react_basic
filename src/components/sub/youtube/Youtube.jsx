@@ -40,29 +40,6 @@ export default function Youtube() {
 					voluptatibus, id non labore explicabo error totam! Illo, itaque id, culpa dolore perferendis libero est magnam a ipsa, aut distinctio.
 				</div>
 
-
-				<div className="Box">
-					<div className="box">
-						<h2>Lorem, ipsum.</h2>
-						<br />
-						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
-						<button>More view</button>
-					</div>
-					<div className="box">
-						<h2>Lorem, ipsum.</h2>
-						<br />
-						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
-						<button>More view</button>
-
-					</div>
-					<div className="box">
-						<h2>Lorem, ipsum.</h2>
-						<br />
-						<span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id obcaecati quaerat et perspiciatis cupiditate ipsum possimus quidem alias itaque ex.</span>
-						<button>More view</button>
-
-					</div>
-				</div>
 				{Youtube.map((data, idx) => {
 					let tit = data.snippet.title;
 					let desc = data.snippet.description;
