@@ -67,11 +67,11 @@
           button {
             width: 30%;
             height: 5vh;
-            color:  rgb(25, 45, 97);
+            color:  rgb(255, 255, 255);
             align-items: center;
             margin-top: 30px;
             border: none;
-            background: #adadad;
+            background: rgb(25, 45, 97);
             transition: 0.5s;
 
             &:hover{
