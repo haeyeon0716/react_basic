@@ -1,62 +1,66 @@
 .Members {
 	.content {
-		table {
-			width: 100%;
-			border: none;
-			border-top: 2px solid #333;
-			border-bottom: 2px solid #333;
-
-			th {
-				width: 20%;
-				border: none;
-				border-bottom: 1px solid #bbb;
-				padding: 15px 30px;
-				text-align: left;
-				&:last-child {
-					text-align: center;
-					input[type='submit'],
-					input[type='reset'] {
-						border: 1px solid #aaa;
-						width: 150px;
-						height: 30px;
-						display: inline-flex;
-						justify-content: center;
-						align-items: center;
-						margin: 0px 10px;
-						cursor: pointer;
-					}
-				}
-			}
-			td {
-				border: none;
-				border-bottom: 1px solid #bbb;
-				border-left: 1px solid #bbb;
-				padding: 15px 30px;
-
-				input[type='text'],
-				input[type='password'],
-				textarea,
-				select {
-					width: 40%;
-					border: 1px solid #aaa;
-					padding: 6px 10px;
-					background: #f3ffff;
-					resize: none;
-				}
-				input[type='checkbox'],
-				input[type='radio'] {
-					margin-right: 20px;
-					margin-left: 5px;
-				}
-				p {
-					font: 0.8rem/1.2 '돋움';
-					color: rgb(47, 87, 189);;
-					margin-top: 5px;
-				}
-			}
+	  table {
+		width: 100%;
+		border: 2px solid #e1e1e1;
+		border-radius: 5px;
+		margin-bottom: 20px;
+  
+		th, td {
+		  border-bottom: 1px solid #e1e1e1;
+		  padding: 15px 30px;
+		  text-align: left;
 		}
+  
+		th {
+		  width: 20%;
+		}
+  
+		th:last-child {
+		  text-align: center;
+  
+		  input[type='submit'],
+		  input[type='reset'] {
+			border: 1px solid #aaa;
+			width: 150px;
+			height: 30px;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0px 10px;
+			cursor: pointer;
+		  }
+		}
+  
+		td {
+		  input[type='text'],
+		  input[type='password'] {
+			width: 80%;
+			padding: 10px;
+			border: 1px solid #aaa;
+			border-radius: 5px;
+		  }
+  
+		  p {
+			font-size: 0.8rem;
+			color: rgb(255, 116, 23);
+			margin-top: 5px;
+		  }
+		}
+  
+		/* Borders */
+		td {
+		  border-left: 1px solid #e1e1e1;
+		}
+  
+		th:last-child,
+		td:last-child {
+		  border-right: 1px solid #e1e1e1;
+		}
+	  }
 	}
-}
+  }
+  
 
 //tablet mediaquery
 .tablet,
