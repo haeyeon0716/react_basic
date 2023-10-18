@@ -41,7 +41,7 @@ export default function Header({ isMain }) {
 					</NavLink>
 				</li>
 			</ul>
-			<FaBars className='Bars' fontSize={20} color='orange'/>
+			<FaBars className='Bars' fontSize={20} color='rgb(23, 45, 99)'/>
 		</header>
 	);
 }
