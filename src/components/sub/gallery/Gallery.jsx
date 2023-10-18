@@ -9,7 +9,7 @@ import { useState, useRef } from 'react';
 import Masonry from 'react-masonry-component';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchFlickr } from '../../../redux/flickrSlice';
-import {open} from '../../../redux/modalSlice';
+import { open } from '../../../redux/modalSlice';
 
 export default function Gallery() {
 	const dispatch = useDispatch();
@@ -17,9 +17,9 @@ export default function Gallery() {
 	const refInput = useRef(null);
 	const refBtnSet = useRef(null);
 	const [ActiveURL, setActiveURL] = useState('');
-	const [IsUser, setIsUser] = useState(true);	
+	const [IsUser, setIsUser] = useState(true);
 	const my_id = '164021883@N04';
-	const IsModal = useSelector((store) => store.modal.isOpen)
+
 
 	//submit이벤트 발생시 실행할 함수
 	const handleSubmit = (e) => {
@@ -167,14 +167,11 @@ export default function Gallery() {
 							);
 						})}
 					</Masonry>
-				</div>
+					</div>
 			</Layout>
-
-			{IsModal && (
-				<Modal>
-					<img src={ActiveURL} alt='img' />
-				</Modal>
-			)}
+			<Modal>
+				<img src={ActiveURL} alt='img' />
+			</Modal>
 		</>
 	);
 }
@@ -192,6 +189,6 @@ export default function Gallery() {
 	이벤트가 발생할 때마다 생성된 action 객체를 계속해서 dispatch로 reducer에 데이터 변경요청을 하도록 처리 했다
 
 	이슈사항2 
-	- 내 아이디 갤러리나 사용자 아이디를 클릭해서 출력하는 user타입의 갤러리 랜더링 시에는 사용자 아이디를 클릭 할 때마다 중복 데이터 호출이 일어나기 때문에 해당 문제점을 해결하기 위해서 user타입의 갤러리가 랜더링 될 때에만 state값을 변경하고 state에 따라서 사용자 아이디의 클릭 이벤트를 막음으로서 불필요한 서버 데이터 호출을 방지했따
+	- 내 아이디 러리나 사용자 아이디를 클릭해서 출력하는 user타입의 갤러리 랜더링 시에는 사용자 아이디를 클릭 할 때마다 중복 데이터 호출이 일어나기 때문에 해당 문제점을 해결하기 위해서 user타입의 갤러리가 랜더링 될 때에만 state값을 변경하고 state에 따라서 사용자 아이디의 클릭 이벤트를 막음으로서 불필요한 서버 데이터 호출을 방지했따
 
 */ 
