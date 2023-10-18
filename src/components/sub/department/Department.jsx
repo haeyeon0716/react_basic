@@ -1,23 +1,18 @@
-//Layout 컴포넌트를 불러옴 ../../ 구문은 부모 디렉터리로 이동하기 위해 사용됨
 import Layout from '../../common/layout/Layout';
-//데이터가 다 받아지고 useState로 state에 해당 담아줌
 import { useEffect, useState } from 'react';
 import './Department.scss';
 const path = process.env.PUBLIC_URL;
 
 export default function Department() {
 	const [Department, setDepartment] = useState([]);
-
-	//UseEffect 컴포넌트 마운트 되자마자 fetch로 외부데이터를 가져온다
-	//마운트 : 컴포넌트가 화면에 나타나는 것
 	useEffect(() => {
 		fetch(`${path}/DB/department.json`)
-			.then((data) => data.json())//fetch문에 대한 응답 성공시
-			.catch((err)=>console.log(err))//fetch문에 대한 응답 실패시
+			.then((data) => data.json())
+			.catch((err)=>console.log(err))
 			.then((json) => {
-				setDepartment(json.members);//json데이터 변환에 대한 응답 성공시
+				setDepartment(json.members);
 			})
-			.catch((err)=>console.log(err)); //json데이터 변환에 대한 응답 실패시
+			.catch((err)=>console.log(err));
 	}, []);
 
 	return (

@@ -43,7 +43,6 @@ export default function Contact() {
 		},
 	]);
 
-	//위의 정보값을 활용한 마커 객체 생성
 	const marker = new kakao.maps.Marker({
 		position: info.current[Index].latlng,
 		image: new kakao.maps.MarkerImage(
@@ -53,7 +52,6 @@ export default function Contact() {
 		),
 	});
 
-	//지도위치를 중심으로 이동시키는 핸들러 함수 제작
 	const setCenter = () => {
 		console.log('지도화면에서 마커 가운데 보정');
 		// 지도 중심을 이동 시킵니다
@@ -61,18 +59,13 @@ export default function Contact() {
 	};
 
 	useEffect(() => {
-		//Index값이 변경될때마다 새로운 지도 레이어가 중첩되므로
-		//일단은 기존 map안의 모든 요소를 없애서 초기화
 		map.current.innerHTML = '';
-		//객체 정보를 활용한 지도 객체 생성
 		instance.current = new kakao.maps.Map(map.current, {
 			center: info.current[Index].latlng,
 			level: 1,
 		});
-		//마커 객체에 지도 객체 연결
 		marker.setMap(instance.current);
 
-		//지도 타입 변경 UI추가
 		const mapTypeControl = new kakao.maps.MapTypeControl();
 		instance.current.addControl(
 			mapTypeControl,
@@ -86,11 +79,9 @@ export default function Contact() {
 		//라우터로 다른페이지이동하더라도 계속해서 setCenter호출되는 문제점 발생
 		//해결방법: Contact 컴포넌트가 언마운트시 강제로 윈도우객체에서 setCenter핸들러를 제거
 		window.addEventListener('resize', setCenter);
-
-		//로드뷰 관련 코드
 		new kakao.maps.RoadviewClient().getNearestPanoId(
 			info.current[Index].latlng,
-			100, //해당 지도의 위치값에서 반경 100미터 안에 제일 가까운 도로 기준으로 로드뷰화면 생성
+			100,
 			(panoId) => {
 				new kakao.maps.Roadview(view.current).setPanoId(
 					panoId,
@@ -102,10 +93,9 @@ export default function Contact() {
 		return () => {
 			window.removeEventListener('resize', setCenter);
 		};
-	}, [Index]); //Index값이 변경될때마다 지도화면이 다시 갱신되어야 하므로 Index값을 의존성 배열에 등록
+	}, [Index]);
 
 	useEffect(() => {
-		//traffic 값이 바뀔때마다 실행될 구문
 		Traffic
 			? instance.current.addOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC)
 			: instance.current.removeOverlayMapTypeId(kakao.maps.MapTypeId.TRAFFIC);
@@ -120,7 +110,6 @@ export default function Contact() {
 		msgForm.value = '';
 	};
 
-	//form mail 기능함수
 	const sendEmail = (e) => {
 		e.preventDefault();
 
@@ -130,9 +119,6 @@ export default function Contact() {
 
 		if (!nameForm.value || !mailForm.value || !msgForm.value)
 			return alert('사용자이름, 이메일주소, 문의내용은 필수 입력사항입니다.');
-
-		//sendForm메서드는 각 키값을 문자열로만 인수로 전달되도록 type지정되어 있기 때문에
-		//변수를 `${}`로 감싸서 문자형식으로 전달
 
 		emailjs
 			.sendForm(
@@ -247,7 +233,6 @@ export default function Contact() {
 					</button>
 				</div>
 
-					{/* 데이터기반으로 자동 버튼 생성 및 자동 이벤트 연결 처리 */}
 				<ul>
 					{info.current.map((el, idx) => (
 						<li

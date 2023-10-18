@@ -3,7 +3,6 @@ import './Community.scss';
 import { useRef, useState, useEffect } from 'react';
 
 export default function Community() {
-	//로컬데이터의 값을 parsing해서 반환하는 함수
 	const getLocalData = () => {
 		const data = localStorage.getItem('post');
 		if (data) return JSON.parse(data);
@@ -13,8 +12,6 @@ export default function Community() {
 	const refTextarea = useRef(null);
 	const refEditInput = useRef(null);
 	const refEditTextarea = useRef(null);
-	//해당 컴포넌트가 처음 마운트시에는 로컬저장소에 값이 없기 때문에 빈배열 리턴
-	//저장소에 값이 있으면 해당값을 parsing된 데이터가 있는 배열값을 리턴
 	const [Posts, setPosts] = useState(getLocalData());
 	const [Allowed, setAllowed] = useState(true);
 	console.log(Posts);
@@ -95,7 +92,6 @@ export default function Community() {
 
 	return (
 		<Layout title={'Community'}>
-		<section>
 			<div className='inputBox'>
 				<input ref={refInput} type='text' placeholder='제목을 입력하세요.' />
 				<br />
@@ -155,7 +151,6 @@ export default function Community() {
 									</button>
 								</nav>
 							</article>
-							
 						);
 					} else {
 						//출력 모드 렌더링
@@ -174,30 +169,10 @@ export default function Community() {
 									<button onClick={() => deletePost(idx)}>Delete</button>
 								</nav>
 							</article>
-							
 						);
-						
 					}
 				})}
 			</div>
-			</section>
 		</Layout>
 	);
 }
-
-/*
-  Create : 게시글 저장
-  Read : 게시글 보기
-  Update : 게시글 수정
-  Delete : 게시글 삭제
-
-  localStorage : 모든 브라우저가 가지고 있는 경량의 저장소 (문자열: 5MB)
-
-  로컬저장소에 데이터 저장
-  localStorage.setItem({key: 'value'}); 
-  객체를 문자화시켜서 저장
-
-  로컬저장소에 데이터 가져옴
-  localStorage.getItem(key)
-  문자화되어있는 객체를 다시 parsing해서 호출
-*/
