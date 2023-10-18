@@ -1,3 +1,5 @@
+// 이슈사항 정리
+
 import Layout from '../../common/layout/Layout';
 import './Members.scss';
 import { useState, useRef } from 'react';
@@ -317,3 +319,16 @@ export default function Members() {
 		</Layout>
 	);
 }
+
+/*
+	1. react-hook-form을 쓰지 않고 직접 기능을 만든 이유
+	-- 라이브러리는 언제든지 연결 할 수 있지만 아직 배우는 입장이기 때문에 부족하나마 어떤 방식으로 인증로직이 처리 되는지 직접 만들어 보고 싶었다
+
+	그래서 checkBox, radio, selector, textarea 같이 필수 입력 사항이 아닌 요소도 직접 인증 구형을 해봤다
+
+	이슈사항1
+	인증처리 하면서 제일 힘들었던 부분은 비밀번호, 이메일 인증 구현이 힘들었다
+
+	구글링을 해보니 정규표현식의 예시코드가 많이 있었지만 아직 정규표현식이 제대로 공부한 것이 아니라 모르는 상태로 무작정 붙여넣기는 싫어서 
+	내가 알고 있는 문자열 관련 메서드를 최대한 활용해서 구현 해봤따
+*/
