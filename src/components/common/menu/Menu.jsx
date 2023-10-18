@@ -1,9 +1,17 @@
 import './Menu.scss';
 import { Link, NavLink } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 
 function Menu() {
 	return (
-		<aside className='menu'>
+		<AnimatePresence>
+		<motion.aside 
+		className='menu' 
+		initial={{x: '-100%'}} 
+		animate={{x: '0%'}} 
+		exit={{x: '-100%'}}
+		transition={{duration: 0.5}}
+		>
 			<h1>
 				<Link to='/'>LOGO</Link>
 			</h1>
@@ -40,7 +48,8 @@ function Menu() {
 					</NavLink>
 				</li>
 			</ul>
-		</aside>
+		</motion.aside>
+		</AnimatePresence>
 	);
 }
 
