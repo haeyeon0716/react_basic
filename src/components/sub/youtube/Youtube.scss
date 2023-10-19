@@ -1,8 +1,5 @@
 .Youtube {
   overflow: hidden;
-    figure {
-
-    }
   
     .content {
       width: 100%;
@@ -10,16 +7,6 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-  
-      h1 {
-        text-align: center;
-        width: 45%;
-        font-size: 7rem;
-        font-family:serif;
-        padding-bottom: 1rem;
-        padding: 2rem ;
-        border-top: 6px solid rgb(25, 45, 97);
-      }
 
       .txt{
         color: #000;

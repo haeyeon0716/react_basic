@@ -1,19 +1,28 @@
 import './Visual.scss';
-import { UseSelector, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 function Visual() {
-	const {data} = useSelector((store)=> store.youtube)
+	const { data } = useSelector((store) => store.youtube);
+
 	return (
 		<section className='visual'>
-			<h2>Visual</h2>
-			{data.map((vid,idx)=>{
-				if (idx >= 5) return null; 
-				return(
-				<article key={idx}>
-					<h2>{vid.snippet.title}</h2>
-				</article>
-				)
-			})}
+			<Swiper slidesPerView={3} spaceBetween={50}>
+				{data.map((vid, idx) => {
+					if (idx >= 5) return null;
+					return (
+						<SwiperSlide key={idx}>
+							<div className='inner'>
+								<div className="pic">
+								<img src={vid.snippet.thumbnails.maxres.url} alt={vid.title} />
+								</div>
+								<h2>{vid.snippet.title}</h2>
+							</div>
+						</SwiperSlide>
+					);
+				})}
+			</Swiper>
 		</section>
 	);
 }

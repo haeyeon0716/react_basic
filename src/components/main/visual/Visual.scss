@@ -1,5 +1,35 @@
 .visual{
     width: 100%;
     height: calc(100vh - 90px);
-    background: aqua;
+
+    .swiper{
+        height: 100%;
+        padding: 8vw 0px;
+
+        .swiper-slide{
+            width: 100%;
+            height: 100%;
+            
+            .inner{
+                width: 100%;
+                height: 100%;
+                padding: 30px;
+                background: #fff;
+                box-shadow: 10px 10px 30px rgba(0,0,0,0.05);
+                flex-wrap: wrap;
+                display: flex;
+
+                .pic{
+                    width: 100%;
+                    height: 60%;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
 }
