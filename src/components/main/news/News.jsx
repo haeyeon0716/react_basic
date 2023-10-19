@@ -32,12 +32,11 @@ function News() {
 	const [Post, setPost] = useState(getLocalData());
 
 	useEffect(() => {
-		console.log(getLocalData());
 		setPost(getLocalData());
 	}, []);
 
 	return (
-		<section className='news'>
+		<section className='news myScroll'>
 			<h2>News</h2>
 			<div className='postWrap'>
 				{Post.map((el, idx) => {
