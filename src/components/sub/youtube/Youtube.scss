@@ -1,12 +1,11 @@
 .Youtube {
   overflow: hidden;
   
-    .content {
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
+  .content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* 추가: 가운데 정렬 */
 
       .txt{
         color: #000;
