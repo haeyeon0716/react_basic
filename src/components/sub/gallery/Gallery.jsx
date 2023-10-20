@@ -139,7 +139,8 @@ export default function Gallery() {
 						disableImagesLoaded={false}
 						updateOnEachImageLoad={false}
 					>
-						{Pics.map((data, idx) => {
+						{/* 해당 데이터가 어떤 이유에서건 없는데 해당 객체 안의 property를 호출할 때 런타이밍 에러가 뜨는 경우이르모 배열값 자체가 없으면 랜더링을 안해서 property 오류해결 */}
+						{Pics.length !==0 && Pics.map((data, idx) => {
 							return (
 								<article key={idx}>
 									<div className='inner'>
