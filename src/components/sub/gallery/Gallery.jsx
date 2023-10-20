@@ -1,5 +1,9 @@
 /*
-	해당 컴포넌트 설명 & 이슈사항
+	해당 컴포넌트 설명 & 이슈사항\
+	메뉴 빠르게 이동시 에러 뜨는 경우 
+	원인 : 특정 컴포넌트에서 시간이 오래 걸리는 연산 작업후 그 결과물을 state애 미처 담기도 전ㅇ에 컴포넌트가 언마운트 되는 경우 (메모리 누수)
+	해결방ㅇ법: 특정 state값이 true 일 때만 state에 무거운 값아 담기도록 처리 해주고 컴포넌트 unmount시에 해당 값을 false 변경
+	컴포넌트 언마운트 될 때 쯤 
 */
 
 import Layout from '../../common/layout/Layout';
@@ -19,6 +23,7 @@ export default function Gallery() {
 	const [ActiveURL, setActiveURL] = useState('');
 	const [IsUser, setIsUser] = useState(true);
 	const my_id = '164021883@N04';
+	
 
 
 	//submit이벤트 발생시 실행할 함수
