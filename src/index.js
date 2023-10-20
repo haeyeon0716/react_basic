@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -44,8 +46,25 @@ ReactDOM.render(
 	-- 해경방식 index.html을 불러오고 동적인 리액트 컴포넌트 마운트 되기 전까지 static 데이터를 미리 출력해서 검색엔진 최적화
 
 
-	2. react프로젝트에서 public, src 폴더를 통해서 어떤 식으로 빌드 되면서 화면이 렌더링 되는지
+	3. react프로젝트에서 public, src 폴더를 통해서 어떤 식으로 빌드 되면서 화면이 렌더링 되는지
 	-- Server Side Rendering
 	-- index.js를 구동파일로 해서 App.js에 있는 모든 컴포넌트를 불러온 다음에 내부적으로 내장되어있는 web pack이라는 번들러에 의해서 하나의 js파일로 번들링 ( 하나로 합쳐짐 ) 번들링된 파일이 index.js에 의해서 public폴더 안에 있는 index.html에 합치면서 최종빌드가 완료됨
 	-- 그럼 브라우저에서는 빌드 완료된 index.html을 읽어서 화면 렌더링
+
+
+	4. redux-toolkit으로 클라이언트, 서버데이터 구분없이 전역상태관리의 문제점
+	-- 기존에는 서버사이드 데이터로 전역 store에 static하게 저장을 하다보니 실시간으로 자주 바뀌는 데이터 경우에는
+	-- 결국 전역 store에 최신데이터가 아닌 예전 데이터를 관리하게 됨 
+	-- 서버 데이터를 전역에 저장하는 것 자체가 잘못 된 방식이기 때문에
+	-- 서버 데이터가 필요할 때마다 계속 가져와야됨
+	-- 새로fetching 할 때 이미 불러온 적이 있는 똑같은 데이터 경우는 caching처리된 데이터를 재활용해서 불필요한 refething방지
+
+	비동기데이터가 아닌 클라이언트 데이터도 굳이 redux가 아닌 context api를 활용하는 이유
+	-- 복잡한 구조의 비동기 데이터는 react-query가 처리하기 때문에
+	-- 간단한 클라이언트 사이드 데이터를 굳이 리덕스라는 라이브러리를 쓰면서까지 활용할 필요가 없어짐
+	-- 기본 리액트의 기능인 useContext를 활용한 커스텀훅으로 활용
+
+	-- Client Side Data (UseContext를 활용한 커스텀훅을 전역관리)
+	-- Server-Side-Data (react-query를 활용해서 전역상태를 저장하는 것이 아닌 캐싱처리)
+
 */

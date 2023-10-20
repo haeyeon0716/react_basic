@@ -21,7 +21,7 @@ function Btns() {
 	//브라우저 리사이즈시 현재 세로 스크롤값을 갱신하는 함수
 	const modifyPos = () => {
 		let activeIndex = 0;
-		if(!refBtns.current) return;
+		if (!refBtns.current) return;
 		const lis = refBtns.current.querySelectorAll('li');
 		lis.forEach((li, idx) => {
 			li.classList.contains('on') && (activeIndex = idx);
@@ -31,10 +31,9 @@ function Btns() {
 
 	//브라우저 스크롤시 버튼을 반복돌면서 스크롤이 특정 섹션영역을 넘어가면 해당 순번의 버튼 활성화 함수
 	const activation = () => {
-		//컴포넌트 언마운트시 querySelectorAll 앞에 null 오류가 뜨면 
-		//해당 값이 없을 때 return으로 강제 함수 종료
-		if(!refBtns.current) return;
-		console.log('activation called');
+		//컴포넌트 언마운트시 queryselector앞에 null오류가 뜰때에는
+		//해결방법 - 해당값이 없을때 return 으로 강제 함수 종료
+		if (!refBtns.current) return;
 		const btns = refBtns.current.querySelectorAll('li');
 		const scroll = window.scrollY;
 
@@ -58,12 +57,11 @@ function Btns() {
 
 		return () => {
 			window.removeEventListener('resize', throttledGetPos);
+			window.removeEventListener('resize', modifyPos);
 			window.removeEventListener('scroll', throttledActivation);
-			window.addEventListener('scroll', throttledActivation);
-
-			//만약 스크롤 위치가 최상단으로 이동하지 않은 상태에서 페이지 변셩시 스크롤 위치를 위로 올리기 위해서 
+			//만약 스크롤 위치가 최상단으로 이동하지 않은상태에서 페이지 변경시 스크롤위치를 위로 올리기 위해서
 			//해당 컴포넌트 언마운트시 무조건 스크롤 y축을 0으로 이동
-			window.scrollTo(0,0)
+			window.scrollTo(0, 0);
 		};
 	}, []);
 
@@ -93,7 +91,7 @@ function Btns() {
 export default Btns;
 
 /*
-  스크롤 모션 작업 단계
-  1. 컴포넌트 마운트시 각각의 버튼 클릭시 이동해야되는 세로 섹션의 위치값들을 배열로 저장하는 함수 호출
-  2. 각 세로버튼 클릭시 클릭한 버튼의 순번에 맞는 배열의 위치값을 anime를 활용해서 세로 스크롤 모션 이동
+	스크롤 모션 작업 단계
+	1. 컴포넌트 마운트시 각각의 버튼 클릭시 이동해야되는 세로 섹션의 위치값들을 배열로 저장하는 함수 호출
+	2. 각 세로버튼 클릭시 클릭한 버튼의 순번에 맞는 배열의 위치값을 anime를 활용해서 세로 스크롤 모션 이동
 */
