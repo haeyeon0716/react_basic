@@ -17,4 +17,4 @@ const fetchYoutube = async () => {
 
 export const useYoutubeQuery = ()=>{
     return useQuery(['youtubeData'], fetchYoutube)
-}
+};
