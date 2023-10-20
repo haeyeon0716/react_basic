@@ -5,10 +5,10 @@
 import Layout from '../../common/layout/Layout';
 import './Youtube.scss';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { useSelector } from 'react-redux';
+import { useYoutubeQuery } from '../../../hooks/useYoutube';
 
 export default function Youtube() {
-	const Youtube = useSelector((store) => store.youtube.data);
+	const { data:Youtube, isSuccess } = useYoutubeQuery();
 	return (
 		<>
 			<Layout title={'Youtube'}>
@@ -45,7 +45,8 @@ export default function Youtube() {
 
 					</div>
 				</div>			
-						{Youtube.map((data, idx) => {
+						{isSuccess &&
+						Youtube.map((data, idx) => {
 							let tit = data.snippet.title;
 							let desc = data.snippet.description;
 							let date = data.snippet.publishedAt;
