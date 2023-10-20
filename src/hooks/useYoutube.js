@@ -1,20 +1,32 @@
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
+import axios from 'axios';
+import { useQuery } from '@tanstack/react-query';
 
 const fetchYoutube = async () => {
 	const api_key = process.env.REACT_APP_YOUTUBE_API;
 	const baseURL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-	const pid = 'PL1BYYyCLf7NdanCUjHVau1ee2D36jh_qM';
-	const num = 5;
+	const pid = 'PLHtvRFLN5v-W5bQjvyH8QTdQQhgflJ3nu';
+	const num = 10;
 	const resultURL = `${baseURL}?key=${api_key}&part=snippet&playlistId=${pid}&maxResults=${num}`;
 
 	const { data } = await axios.get(resultURL);
 	return data.items;
 };
 
-//react-query에는 query key라는 것을 문자열로 자정해서 데이터 호출시 query key가 동일하면 동일한 데이터로 인지해서 refetching 처리 하지 않고 캐싱 되어 있는 데이터를 재활용
+//react-query에는 쿼리키를 문자열로 지정해서 데이터 호출시 쿼리키가 동일하면 동일한 데이터로 인지해서
+//refetching처리하지 않고 캐싱되어 있는 데이터를 재활용
 //useQuery([쿼리키], fetching함수, 캐싱옵션)
+//react-query에서 쓰이는 데이터 상태 개념
 
-export const useYoutubeQuery = ()=>{
-    return useQuery(['youtubeData'], fetchYoutube)
+//pending : 데이터 요청을 보내고 응답 받기 까지의 상태
+//fresh : 작업자가 직접 자정한 데이터의 신선한 상태
+//stale : 작업자가 직접 지정한 옛날 데이터의 상태
+//inactive : 해당 컴포넌트에서 reactu-query로 관리하고 있는 데이터를 활용하고 있지 않은 비활성화인 상태
+
+export const useYoutubeQuery = () => {
+	return useQuery(['youtubeData'], fetchYoutube, {
+        refetchOnWindowFocus: false,
+        refetchOnMount: false,
+        cacheTime: 1000 * 10,
+        staleTime: 1000 * 10,
+    });
 };
