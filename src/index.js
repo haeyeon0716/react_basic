@@ -64,7 +64,7 @@ ReactDOM.render(
 	-- 간단한 클라이언트 사이드 데이터를 굳이 리덕스라는 라이브러리를 쓰면서까지 활용할 필요가 없어짐
 	-- 기본 리액트의 기능인 useContext를 활용한 커스텀훅으로 활용
 
-	-- Client Side Data (UseContext를 활용한 커스텀훅을 전역관리)
+	-- Client Side Data (UseContext를 활용한 커스텀훅을 전역관리) - 
 	-- Server-Side-Data (react-query를 활용해서 전역상태를 저장하는 것이 아닌 캐싱처리)
 
 */
