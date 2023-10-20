@@ -1,5 +1,6 @@
 // 이슈사항 정리
 
+import { useDebounce } from '../../../hooks/useDebounce';
 import Layout from '../../common/layout/Layout';
 import './Members.scss';
 import { useState, useRef, useEffect } from 'react';
@@ -20,6 +21,8 @@ export default function Members() {
 	const refSelGroup = useRef(null);
 	const [Val, setVal] = useState(initVal);
 	const [Errs, setErrs] = useState({});
+
+	const DebouncedVal = useDebounce(Val);
 
 	const resetForm = (e) => {
 		e.preventDefault();
@@ -128,12 +131,17 @@ export default function Members() {
 	};
 
 	const showCheck = () =>{
-		setErrs(check(Val));
+		setErrs(check(DebouncedVal));
 	};
 
+	//의존성 배열에 Debouncing이 적용된 state값을 등록해서 
+	//함수의 핸들러 함수 호출의 빈도를 줄여줌
+	//useDebouncing은 state의 변경 횟수 자체를 줄이는게 아니라 
+	//해당 state에 따라 변경되는 호출되는 함수의 빈도를 줄임
 	useEffect(()=>{
+		console.log('Val State 값 변경에 의해서 showCheck함수 호출')
 		showCheck();
-	}, [Val])
+	}, [DebouncedVal])
 
 	return (
 		<Layout title={'Members'}>
